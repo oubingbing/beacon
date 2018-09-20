@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/album_detail/album_detail",
+    "pages/history/history",
+    "pages/about/about",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "灯塔",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#66CDAA",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/pic.png",
+        "selectedIconPath": "image/select-pic.png",
+        "text": "图辑"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "image/iam.png",
+        "selectedIconPath": "image/select-iam.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

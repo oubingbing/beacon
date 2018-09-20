@@ -1,0 +1,76 @@
+
+<view wx:if="{{show_auth}}" class='auth-container'>
+  <view class='auth-wall'>
+    <view class='auth-tips'>
+      <image src='/image/wechat-logo.png'></image>
+      <view>授权您的公开信息(昵称和头像)</view>
+    </view>
+    <button open-type="getUserInfo" 
+            bindgetuserinfo="getAuthUserInfo" 
+            class='auth-button'>
+      <view>授权登录</view>
+    </button>
+  </view>
+</view>
+
+<view class='container'>
+  <view class='content'>
+    <view class='content-item' wx:for="{{list}}" wx:key="{{list}}">
+      <view class='item-left'>
+        <view class='point' style="background:{{item.color}}"></view>
+        <view class='left-time'><view class='time'>{{item.date}}</view></view>
+      </view>
+      <view class='item-right'>
+        <view class='right-content'>
+          <view class='header'>
+            <image  class='logo' src="{{imageUrl+item.logo}}" wx:if="{{item.logo != ''}}"></image>
+            <view wx:if="{{item.title != ''}}">{{item.title}}</view>
+          </view>
+          <view class='content-word' wx:if="{{item.content != ''}}">
+            <view>{{item.content}}</view>
+          </view>
+          <view class='pic-container' bindtap='openDetail' data-id='{{item.id}}'>
+            <image class='pic' src='{{imageUrl+item.cover}}' mode='widthFix'></image>
+          </view>
+          
+          <view class='footer'>
+            <view class='footer-item'>
+              <image class='icon' src='/image/view.png'></image>
+              <view>{{item.view}}</view>
+            </view>
+            <view class='footer-item' 
+                  data-id='{{imageUrl+item.cover}}' 
+                  data-objid='{{item.id}}' 
+                  bindtap='downloadImage'>
+              <image class='icon' 
+                     src='/image/down-load.png'></image>
+              <view>下载</view>
+            </view>
+            <view class='footer-item'>
+              <button class='button' open-type="share" style='border: none;' id='{{item.id}}' data-image='{{imageUrl+item.cover}}'>
+                <image class='icon' src='/image/share.png'></image>
+                <view>分享</view>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+  <view class='get-more' wx:if="{{showGeMoreLoadin}}">
+    <view class='get-more-item'>
+      <image src='/image/get-more.gif' mode='aspectFit'></image>
+      <view class='loading'>加载中</view>
+    </view>
+  </view>
+
+  <view class='no-more-data' wx-if="{{notDataTips && list.length != 0}}">
+    <view>别扯了，到底啦~_~</view>
+  </view>
+
+
+
+

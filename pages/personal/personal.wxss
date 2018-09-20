@@ -1,0 +1,82 @@
+page{
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container .header{
+  width: 100%;
+  height: 250rpx;
+  background-image: linear-gradient(to top, #fe9a8b 0%, #fd868c 19%, #f9748f 60%, #f78ca0 100%);
+  border-radius: 15rpx;
+  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30rpx;
+  color: white;
+}
+
+.container .item{
+  width: 90%;
+  height: 185rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30rpx;
+  color: white;
+}
+
+.collect{
+  background-image: linear-gradient(-225deg, #50A7C2 0%, #B7F8DB 100%);
+}
+
+.visit-history{
+  background-image: linear-gradient(to right, #6f86d6 0%, #48c6ef 100%);
+}
+
+.down-load{
+  background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+}
+
+.about-us{
+  background-image: linear-gradient(to right, #b224ef 0%, #7579ff 100%);
+}
+
+.header image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+  border-style:solid;
+  border-width:5rpx;
+  border-color: white;
+  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
+}
+
+.item image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.header .nickname{
+  padding-left: 20rpx;
+}
+
+.item .label{
+    padding-left:15rpx;
+    font-size: 35rpx;
+}

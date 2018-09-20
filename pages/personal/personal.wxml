@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='header'>
+    <image src='{{user.avatar}}'></image>
+      <view class='nickname'>{{user.nickname}}</view>
+  </view>
+
+  <view class='item collect' bindtap='openLog' data-type='1'>
+    <image src='/image/white-view.png'></image>
+    <view class='label'>浏览记录</view>
+  </view>
+
+  <view class='item visit-history' bindtap='openLog' data-type='2'>
+    <image src='/image/white-collect.png'></image>
+    <view class='label'>收藏图片</view>
+  </view>
+
+  <view class='item down-load' bindtap='openLog' data-type='3'>
+    <image src='/image/white-down-load.png'></image>
+    <view class='label'>下载历史</view>
+  </view>
+
+  <view class='item about-us' bindtap='openAbout'>
+    <image src='/image/us.png'></image>
+    <view class='label'>关于我们</view>
+  </view>
+
+</view>

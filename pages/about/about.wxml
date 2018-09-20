@@ -1,0 +1,33 @@
+<view class='container'>
+  <view class='content' wx:if="{{about != ''}}">
+    <view class='header'>
+      <image src='{{imageUrl+about.logo}}'></image>
+    </view>
+    <view class='description' wx:if="{{about.description != null}}">
+      <view class='description-detail'>
+        {{about.description}}
+      </view>
+    </view>
+    <view class='contact'>
+      <view class='contact-item' wx:if="{{about.publicNumber != null}}">
+        <image src='/image/public-number.png'></image>
+        <view class='right'>{{about.publicNumber}}（公众号）</view>
+      </view>
+      <view class='contact-item' wx:if="{{about.weChatNumber != null}}">
+        <image src='/image/wechat.png'></image>
+        <view class='right'>{{about.weChatNumber}}</view>
+      </view>
+        <view class='contact-item' wx:if="{{about.phone != null}}">
+        <image src='/image/phone.png'></image>
+        <view class='right'>{{about.phone}}</view>
+      </view>
+      <view class='contact-item' wx:if="{{about.email != null}}">
+        <image src='/image/email.png'></image>
+        <view class='right'>{{about.email}}</view>
+      </view>
+      <view class='footer' wx:if="{{about.qrCode != null}}">
+        <view><image src='{{imageUrl+about.qrCode}}'></image></view>
+      </view>
+    </view>
+  </view>
+</view>
