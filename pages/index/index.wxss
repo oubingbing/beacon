@@ -14,147 +14,108 @@ page{
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: #E8E8E8;
+  margin-bottom: 30rpx;
 }
 
 .content .content-item{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-
-.content-item .item-left{
-  width: 5%;
-  display: flex;
-  flex-direction: row;
-  border-right-style:solid;
-  border-width:1rpx;
-  border-color:gainsboro;
-  padding-top: 20rpx;
-}
-
-.item-left .point{
-  width: 25rpx;
-  height: 25rpx;
-  border-radius: 13rpx;
-  position: absolute;
-  z-index: 90;
-  left: 27rpx;
-  top: 40rpx;
-}
-
-.content-item .item-right{
   width: 95%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 10rpx;
- 
 }
 
-.item-right .created_at{
-  font-size: 30rpx;
-  color: darkgray;
-}
-
-.time{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 250rpx;
-  height: 30prx;
-  color: darkgray;
-  background: white;
-  transform:rotate(90deg);
-  margin-top: 250rpx;
-  margin-left: -90rpx;
-  font-size: 20rpx;
-  letter-spacing:15rpx;
-  padding-left: 10rpx;
-}
-
-.item-right .header{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 30rpx;
-  color: gray;
-  padding-bottom: 15rpx;
-}
-
-.header .logo{
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 40rpx;
-  margin-right: 15rpx;
-}
-
-.content-word{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  font-size: 35rpx;
-  margin-bottom: 20rpx;
-}
-
-.item-right .right-content{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-.content-item .pic-container{
-  width: 100%;
-  padding-bottom: 15rpx;
-  display: flex;
-  flex-direction: column;
-}
-
-.pic-container .pic{
-  border-radius: 15rpx;
-  width: 100%;
-  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
-}
-
-.content-item .footer{
+.content .header{
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 10rpx;
+  align-items: center;
+}
+
+.header .user-info{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info .user{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rpx;
+}
+
+.user .time{
+  font-size: 30rpx;
+  color: darkgray;
+}
+
+.user-info image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+}
+
+.header .operation{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+}
+
+.content-item .content-wall{
+  width: 100%;
   padding-bottom: 10rpx;
+  padding-top: 10rpx;
 }
 
-.footer .footer-item{
+.title .title-content{
+  display: inline;
+}
+
+
+.content-wall .detail{
+  color: #1874CD;
+  display: inline;
+}
+
+.operation .follow{
+  height: 100%;
+}
+
+.attachments{
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.attachments-single-image image{
+  width: 100%;
+  height: 400rpx;
+}
+
+.attachments .attachments-more-image{
   display: flex;
   flex-direction: row;
-  font-size: 25rpx;
-  color: gray;
-  justify-content: center;
-  align-items: center;
+  flex-wrap:wrap;
 }
 
-.footer-item .button{
-  background: none !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 25rpx;
-}
-.button::after{
-  border: none;
-}
-
-.button .icon{
-  width: 35rpx;
-  height: 35rpx;
-}
-
-.footer .icon{
-  width: 40rpx;
-  height: 40rpx;
+.attachments-more-image image{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
 }
 
 /** 授权按钮 **/

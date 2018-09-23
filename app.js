@@ -2,11 +2,11 @@ const Towxml = require('/towxml/main');
 App({
   onLaunch: function () {
 
-    this.globalData.appKey = 'kMePOZ4fvHllbAUe';
-
     //设置基本接口全局变量
-    this.globalData.apiUrl = 'http://www.qiuhuiyi.cn/api/wechat';
-    //this.globalData.apiUrl = 'http://article.com/api/wechat';
+    //this.globalData.apiUrl = 'http://www.qiuhuiyi.cn/api/wechat';
+    this.globalData.apiUrl = 'http://localhost:8000/api/wechat';
+    
+    this.globalData.imageUrl = 'http://article.qiuhuiyi.cn/';
 
     this.newTravelPlan = false;
     let token = wx.getStorageSync('token');

@@ -99,11 +99,11 @@ Page({
 
   getList(){
     let _this = this;
-    app.http("GET", "/picture/list"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }`, {}, function (res) {
+    app.http("GET", "/article"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
-      if (resData.code == 0) {
+      if (resData.error_code == 0) {
         if(resData.data.length > 0){
           resData.data.map(item => {
             list.push(item)
