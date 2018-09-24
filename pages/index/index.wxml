@@ -1,5 +1,5 @@
 
-<view wx:if="{{show_auth}}" class='auth-container'>
+<view class='auth-container' wx:if="{{show_auth}}">
   <view class='auth-wall'>
     <view class='auth-tips'>
       <image src='/image/wechat-logo.png'></image>
@@ -16,23 +16,10 @@
 <view class='container'>
   <view class='content' wx:for="{{list}}" wx:key="{{list}}">
     <view class='content-item'>
-    
-      <view class='header'>
-        <view class='user-info'>
-          <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
-            <view class='user'>
-              <view class='nickname'>叶子</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-          <view class='operation'>
-            <view class='follow'>关注</view>
-          </view>
-        </view>
 
         <view class='content-wall'>
-          <view class='title'>
-            <view class='title-content'>我是如何成长为一名野路子出身的程序员的... </view><view class='detail'>全文</view>
+          <view class='title' bindtap='openDetail' data-id='{{item.id}}'>
+            <view class='title-content'>{{item.title}}... </view><view class='detail'>全文</view>
           </view>
           <view class='attachments'>
             <view class="attachments-single-image" >
@@ -54,6 +41,15 @@
                       src="{{sub}}" 
                       id="{{sub}}"></image>
               </view>
+          </view>
+          <view class='footer'>
+            <view class='footer-content'>
+              <view class='user'>叶子</view>
+              <view class='time'>1天前</view>
+            </view>
+            <view class='footer-icon'>
+              <image src='/image/share.png'></image>
+            </view>
           </view>
         </view>
 

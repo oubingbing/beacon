@@ -1,27 +1,42 @@
-<view class='container'>
-  <view class='header'>
-    <image src='{{user.avatar}}'></image>
-      <view class='nickname'>{{user.nickname}}</view>
+<view class="personal-container">
+
+  <view class="bg-container">
+      <view class='bg-image'>
+        <image mode="aspectFill" src='/image/bg.jpg'></image>
+      </view>
+      <view>
+        <view class='user-nickname'>{{user.nickname}}</view>
+        <image class='user-image' src='{{user.avatar}}'></image>
+      </view>
+      <view class='user-info'>
+          <view class='article'>
+            <view class="word">好似一叶扁舟独自远航，迷茫时才发现，灯塔早已亮起</view>
+          </view>
+      </view>
   </view>
 
-  <view class='item collect' bindtap='openLog' data-type='1'>
-    <image src='/image/white-view.png'></image>
-    <view class='label'>浏览记录</view>
+  <view class='message' bindtap='openMessage'>
+    <view><image src='/image/bond.png' class='item-image'></image></view>
+    <view class='word'>绑定</view>
   </view>
 
-  <view class='item visit-history' bindtap='openLog' data-type='2'>
-    <image src='/image/white-collect.png'></image>
-    <view class='label'>收藏图片</view>
+  <view class='content-container'>
+    <view class='content-item say-love' bindtap="opendPostList">
+      <view><image src='/image/my-collect.png' class='item-image'></image></view>
+      <view class='word'>收藏</view>
+    </view>
+    <view class='content-item sale' bindtap="openSaleList">
+      <view><image src='/image/follow.png' class='item-image'></image></view>
+      <view class='word'>关注</view>
+    </view>
+    <view class='content-item hide-love' bindtap="openMatchList">
+      <view><image src='/image/note.png' class='item-image'></image></view>
+      <view class='word'>我的笔记</view>
+    </view>
   </view>
 
-  <view class='item down-load' bindtap='openLog' data-type='3'>
-    <image src='/image/white-down-load.png'></image>
-    <view class='label'>下载历史</view>
+  <view class='suggestion' bindtap='openSugesstion'>
+    <view><image src='/image/suggestion.png' class='item-image'></image></view>
+    <view class='word'>联系客服</view>
   </view>
-
-  <view class='item about-us' bindtap='openAbout'>
-    <image src='/image/us.png'></image>
-    <view class='label'>关于我们</view>
-  </view>
-
 </view>

@@ -43,7 +43,7 @@ Page({
   },
 
   onReady(){
-    this.shareInfo()
+    //this.shareInfo()
   },
   
   onShow: function (option) {
@@ -123,11 +123,11 @@ Page({
    * 上拉加载更多
    */
   onReachBottom: function () {
-    this.setData({ 
-      showGeMoreLoadin: true,
-      notDataTips:false
-    })
-    this.getList();
+    //this.setData({ 
+     // showGeMoreLoadin: true,
+     // notDataTips:false
+   // })
+    //this.getList();
   },
 
   /**
@@ -176,8 +176,9 @@ Page({
    */
   openDetail: function (e) {
     let id = e.currentTarget.dataset.id;
+
     wx.navigateTo({
-      url: '/pages/album_detail/album_detail?id='+id
+      url: '/pages/article/article?id='+id
     })
   },
 

@@ -1,17 +1,15 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/article/article",
     "pages/personal/personal",
-    "pages/album_detail/album_detail",
-    "pages/history/history",
-    "pages/about/about",
-    "pages/article/article"
+    "pages/note/note"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "white",
+    "navigationBarBackgroundColor": "#66CDAA",
     "navigationBarTitleText": "大学灯塔",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#515151",
@@ -21,9 +19,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/pic.png",
-        "selectedIconPath": "image/select-pic.png",
-        "text": "图辑"
+        "iconPath": "image/dengta.png",
+        "selectedIconPath": "image/select-dengta.png",
+        "text": "灯塔"
+      },
+      {
+        "pagePath": "pages/note/note",
+        "iconPath": "image/my-note.png",
+        "selectedIconPath": "image/my-note-select.png",
+        "text": "笔记"
       },
       {
         "pagePath": "pages/personal/personal",

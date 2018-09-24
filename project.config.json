@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.5",
-	"appid": "wx91b3c82b6b53db8d",
-	"projectname": "%E7%81%AF%E5%A1%94",
+	"appid": "wx00caa212d6710dcb",
+	"projectname": "%E6%A0%A1%E5%9B%AD%E7%81%AF%E5%A1%94",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -51,8 +51,8 @@
 				},
 				{
 					"id": 3,
-					"name": "测试",
-					"pathName": "pages/article/article",
+					"name": "笔记",
+					"pathName": "pages/note/note",
 					"query": ""
 				}
 			]

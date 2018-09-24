@@ -9,3 +9,17 @@
 
 /**主题配色（深色样式）**/
 @import '/towxml/style/theme/dark.wxss';
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .title{
+  width: 95%;
+  margin-top: 20rpx;
+  font-size: 40rpx;
+}

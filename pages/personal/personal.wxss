@@ -1,82 +1,163 @@
 page{
-  background-color:white;
-  display: flex;
-  flex-direction: column;
+  background-color: #F5F5F5;
+  padding: 0rpx;
+  margin: 0rpx;
 }
 
-.container{
+.personal-container{
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-
-.container .header{
+.personal-container .bg-container{
   width: 100%;
-  height: 250rpx;
-  background-image: linear-gradient(to top, #fe9a8b 0%, #fd868c 19%, #f9748f 60%, #f78ca0 100%);
-  border-radius: 15rpx;
-  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-left: 30rpx;
-  color: white;
+  height: 550rpx;
 }
 
-.container .item{
-  width: 90%;
-  height: 185rpx;
-  margin-top: 20rpx;
-  border-radius: 15rpx;
-  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
+.bg-image image{
+  width: 100%;
+  height: 400rpx;
+}
+
+.bg-container .user-info{
+  width: 100%;
+  height: 150rpx;
+  background: #FFE7BA;
+  margin-top: -10rpx;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
-  padding-left: 30rpx;
-  color: white;
 }
 
-.collect{
-  background-image: linear-gradient(-225deg, #50A7C2 0%, #B7F8DB 100%);
+.article{
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
 }
 
-.visit-history{
-  background-image: linear-gradient(to right, #6f86d6 0%, #48c6ef 100%);
+.letter{
+  display: flex;
+  flex-direction: row;
+  margin-right: 20rpx;
+  align-items: center;
 }
 
-.down-load{
-  background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+.word{
+  margin-left: 20rpx;
+
 }
 
-.about-us{
-  background-image: linear-gradient(to right, #b224ef 0%, #7579ff 100%);
+.letter image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 5rpx;
 }
 
-.header image{
+.bg-container .user-image{
   width: 150rpx;
   height: 150rpx;
-  border-radius: 75rpx;
+  border-radius: 80rpx;
+  z-index: 10;
+  position: absolute;
+  margin-top: -120rpx;
+  right: 30rpx;
   border-style:solid;
-  border-width:5rpx;
+  border-width:8rpx;
   border-color: white;
-  box-shadow: 0rpx 0rpx 20rpx 8rpx gainsboro;
 }
 
-.item image{
-  width: 80rpx;
-  height: 80rpx;
+.bg-container .user-nickname{
+  z-index: 10;
+  position: absolute;
+  margin-top: -70rpx;
+  right: 210rpx;
+  color: white;
 }
 
-.header .nickname{
-  padding-left: 20rpx;
+.user-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 35rpx;
 }
 
-.item .label{
-    padding-left:15rpx;
-    font-size: 35rpx;
+.user-info .user-name{
+  margin-top: 80rpx;
+  width: 35%;
+  text-align: center;
+  font-size: 30rpx;
 }
+
+
+.content-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.content-item{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  align-items: center;
+}
+
+.item-image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+
+.word{
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+
+.content-container{
+  width: 100%;
+  background: white;
+  margin-top: 15rpx;
+}
+
+.content-container .say-love{
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: #EEE9E9;
+}
+
+.content-container .sale{
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: #EEE9E9;
+}
+
+.suggestion{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+

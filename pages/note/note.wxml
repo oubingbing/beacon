@@ -1,0 +1,105 @@
+
+<view class='container'>
+  <view class='content'>
+
+    <view class='content-item'>
+    
+      <view class='header'>
+        <view class='header-content'>
+          <view class='user-info'>
+          <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
+            <view class='user'>
+              <view class='nickname'>叶子</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+          <view class='operation'>
+            <view class='follow'>关注</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='note-content'>
+        <view class='note'>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='more-note'>...</view>
+
+        </view>
+      </view>
+
+      </view>
+
+
+
+        <view class='content-item'>
+    
+      <view class='header'>
+        <view class='header-content'>
+          <view class='user-info'>
+          <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
+            <view class='user'>
+              <view class='nickname'>叶子</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+          <view class='operation'>
+            <view class='follow'>关注</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='note-content'>
+        <view class='note'>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='note-item'>
+            <view class='left'>
+              <view class='title'>如何安装laravel</view>
+              <view class='time'>2018-10-01 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='more-note'>...</view>
+
+        </view>
+      </view>
+
+      </view>
+
+
+  </view>
+</view>

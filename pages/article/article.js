@@ -6,15 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    article: {}
+    content: {},
+    id:'',
+    article:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let id = options.id;
+
     var that = this;
-    app.http('get', `/article`,
+    app.http('get', `/article/`+id,
       {}, res => {
         let data = app.towxml.toJson(res.data.data.content, 'markdown');
 
@@ -22,7 +26,8 @@ Page({
 
         //设置数据
         that.setData({
-          article: data
+          content: data,
+          article: res.data.data
         });
       })
   },
