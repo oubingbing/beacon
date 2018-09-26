@@ -3,7 +3,7 @@
     <view class='content-item'>
       <view class='item-left'>
 
-        <view class='item' wx:for="{{leftList}}" wx:key="{{leftList}}">
+        <view class='item' wx:for="{{leftList}}" wx:key="{{leftList}}" bindtap='openDetail' data-id='{{item.id}}'>
           <view class='item-sub'>
             <view class='title'>{{item.title}}</view>
             <view class='content'>{{item.content}}</view>
@@ -16,7 +16,7 @@
       </view>
 
       <view class='item-right'>
-        <view class='item' wx:for="{{rightList}}" wx:key="{{rightList}}">
+        <view class='item' wx:for="{{rightList}}" wx:key="{{rightList}}" bindtap='openDetail' data-id='{{item.id}}'>
           <view class='item-sub'>
             <view class='title'>{{item.title}}</view>
             <view class='content'>{{item.content}}</view>
