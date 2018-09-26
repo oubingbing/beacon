@@ -19,10 +19,10 @@
 
         <view class='content-wall'>
           <view class='title' bindtap='openDetail' data-id='{{item.id}}'>
-            <view class='title-content'>{{item.title}}... </view><view class='detail'>全文</view>
+            <view class='title-content'>{{item.title}}</view>
           </view>
-          <view class='attachments'>
-            <view class="attachments-single-image" >
+          <view class='attachments' wx:if="{{item.cover_image[0] != null}}">
+            <view class="attachments-single-image">
                 <image mode="aspectFill" 
                       class="image-item" 
                       wx:for-item="sub"

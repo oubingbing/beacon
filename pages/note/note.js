@@ -1,66 +1,41 @@
-// pages/note/note.js
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    leftList:[],
+    rightList:[],
+    leftLength:1,
+    rightLength:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
-  },
+    let _this = this;
+    app.http("GET", `/notes`, {}, function (res) {
+      let resData = res.data;
+      if(resData.error_code == 0){
+        let list = resData.data.page_data;
+        let leftArray = _this.data.leftList;
+        let rightArray = _this.data.rightList;
+        let leftLen = _this.data.leftLength;
+        let rightLen = _this.data.rightLength;
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+        list.map(item=>{
+          if (leftLen >= rightLen){
+            rightArray.push(item);
+            rightLen += item.title_length;
+          }else{
+            leftArray.push(item)
+            leftLen += item.title_length;
+          }
+        })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+        _this.setData({
+          leftList: leftArray,
+          rightList: rightArray,
+          leftLength: leftLen,
+          rightLength: rightLen
+        })
+      }
+      
+    })
   }
 })

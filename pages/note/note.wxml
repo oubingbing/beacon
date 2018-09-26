@@ -3,44 +3,26 @@
     <view class='content-item'>
       <view class='item-left'>
 
-        <view class='item'>
+        <view class='item' wx:for="{{leftList}}" wx:key="{{leftList}}">
           <view class='item-sub'>
-            <view class='title'>TCP/Ip协议的经典讲解</view>
-            <view class='content'>
-                Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。
-            </view>
+            <view class='title'>{{item.title}}</view>
+            <view class='content'>{{item.content}}</view>
             <view class='user-info'>
               <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIRSkNHofic4wB9oyZrFBybUGjozW4DKtGJYWTWORATffxUtFLt1Cm3ibP0YVtfRicERVhsSickhgZic2w/132'></image>
-              <view class='time'>2018-10-01 12:21:01</view>
+              <view class='time'>{{item.created_at}}</view>
             </view>
           </view>
         </view>
-
-        <view class='item'>
-          <view class='item-sub'>
-            <view class='title'>Java从入门到放弃</view>
-            <view class='content'>
-                Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。
-            </view>
-            <view class='user-info'>
-              <image src='https://wx.qlogo.cn/mmopen/vi_32/nHTeBrP98wwWQaKYsNpp7KKtQBwJLlwTxtQmZiaWxBTHq6o4eAoh53vPwDQHZzmaHtPK0z6SnX3QI81S15p7OEQ/132'></image>
-              <view class='time'>2018-10-01 12:21:01</view>
-            </view>
-          </view>
-        </view>
-
-
       </view>
+
       <view class='item-right'>
-        <view class='item'>
+        <view class='item' wx:for="{{rightList}}" wx:key="{{rightList}}">
           <view class='item-sub'>
-            <view class='title'>MySQL数据库优化具体细节</view>
-            <view class='content'>
-                Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。
-            </view>
+            <view class='title'>{{item.title}}</view>
+            <view class='content'>{{item.content}}</view>
             <view class='user-info'>
               <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLH5qHgJP9SCYIFMWAOlfITibfn742Ytxg8I8DOEkrfxicJxe2mHyNASx3dU5a1riblV6RkPVI2vxk3g/132'></image>
-              <view class='time'>2018-10-01 12:21:01</view>
+              <view class='time'>{{item.created_at}}</view>
             </view>
           </view>
         </view>

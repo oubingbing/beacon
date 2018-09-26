@@ -15,6 +15,7 @@ page{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20rpx;
 }
 
 .container-content .content-item{
