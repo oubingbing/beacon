@@ -91,12 +91,6 @@ Page({
     })
   },
 
-  saveDownload: function (id,type) {
-    app.http("POST", `/picture/download_log/${id}`, {type:type}, function (res) {
-      let resData = res.data;
-    })
-  },
-
   getList(){
     let _this = this;
     app.http("GET", "/article"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }`, {}, function (res) {
@@ -104,8 +98,8 @@ Page({
       let resData = res.data;
       let list = _this.data.list;
       if (resData.error_code == 0) {
-        if(resData.data.length > 0){
-          resData.data.map(item => {
+        if(resData.data != undefined){
+          resData.data.page_data.map(item => {
             list.push(item)
           })
           _this.setData({
