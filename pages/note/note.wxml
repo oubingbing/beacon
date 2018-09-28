@@ -19,7 +19,6 @@
         <view class='item' wx:for="{{rightList}}" wx:key="{{rightList}}" bindtap='openDetail' data-id='{{item.id}}'>
           <view class='item-sub'>
             <view class='title'>{{item.title}}</view>
-            <template is="entry" data="{{...content}}"/>
             <view class='content'>{{item.content}}</view>
             <view class='user-info'>
               <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLH5qHgJP9SCYIFMWAOlfITibfn742Ytxg8I8DOEkrfxicJxe2mHyNASx3dU5a1riblV6RkPVI2vxk3g/132'></image>

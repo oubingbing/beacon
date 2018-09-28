@@ -38,6 +38,48 @@
             <view class='title'>mysql</view>
           </view>
 
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+                    <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+
+                    <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+
+                    <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
 
           <view class='note'>
             <image src='/image/dir.png'></image>
