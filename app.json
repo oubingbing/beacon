@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/article/article",
     "pages/personal/personal",
-    "pages/note/note"
+    "pages/note/note",
+    "pages/noteBook/noteBook"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,6 +29,12 @@
         "iconPath": "image/my-note.png",
         "selectedIconPath": "image/my-note-select.png",
         "text": "笔记"
+      },
+      {
+        "pagePath": "pages/noteBook/noteBook",
+        "iconPath": "image/note-book.png",
+        "selectedIconPath": "image/select-note-book.png",
+        "text": "笔记簿"
       },
       {
         "pagePath": "pages/personal/personal",

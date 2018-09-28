@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -53,6 +53,12 @@
 					"id": 3,
 					"name": "笔记",
 					"pathName": "pages/note/note",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "笔记簿",
+					"pathName": "pages/noteBook/noteBook",
 					"query": ""
 				}
 			]

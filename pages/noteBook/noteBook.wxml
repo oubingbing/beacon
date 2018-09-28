@@ -1,0 +1,136 @@
+<view class='container'>
+  <view class='container-content'>
+
+
+    <view class='content'>
+      <view class='my-note'>
+        <view class='label'>我的笔记簿</view>
+        <view class='note-container'>
+
+          <view class='note' bindtap='triggerNoteList'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>springboot教程sdfsdfsdfsdfsdfsdfsdsdf</view>
+          </view>
+
+          <view class='note' bindtap='triggerNoteList'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>java</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>前端技术集合</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>php</view>
+          </view>
+
+          <view class='note'>
+            <image src='/image/dir.png'></image>
+            <view class='title'>mysql</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class='alert-container' wx:if="{{showNoteList}}">
+      <scroll-view scroll-y class='alert-content'>
+          <image class='close-icon' src='/image/close.png' bindtap='triggerNoteList'></image>
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>laravel部署教程</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>laravel部署教程</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>laravel队列</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>单元测试</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>collection</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+                    <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>laravel队列</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>单元测试</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>collection</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+          
+          <view class='file-item'>
+            <image src='/image/markdown.png'></image>
+            <view class='file-title'>
+              <view class='title'>collection</view>
+              <view class='time'>2018-10-1 12:21:11</view>
+            </view>
+          </view>
+
+      </scroll-view>
+    </view>
+
+  </view>
+</view>
