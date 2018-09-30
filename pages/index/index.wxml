@@ -1,4 +1,3 @@
-
 <view class='auth-container' wx:if="{{show_auth}}">
   <view class='auth-wall'>
     <view class='auth-tips'>
