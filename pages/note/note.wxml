@@ -1,32 +1,65 @@
-<view class='container'>
-  <view class='container-content'>
-    <view class='content-item'>
-      <view class='item-left'>
 
-        <view class='item' wx:for="{{leftList}}" wx:key="{{leftList}}" bindtap='openDetail' data-id='{{item.id}}'>
-          <view class='item-sub'>
+<view class='body'>
+  <view class='body-content'>
+    <view class='content' wx:for="{{list}}" wx:key="{{list}}">
+
+      <view class='content-item'>
+
+        <!-- 左右布局 -->
+        <view class='left-right' wx:if="{{item.attachments.length == 1}}">
+          <view class='left' bindtap='openDetail' data-id='{{item.id}}'>
             <view class='title'>{{item.title}}</view>
-            <view class='content'>{{item.content}}</view>
-            <view class='user-info'>
-              <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIRSkNHofic4wB9oyZrFBybUGjozW4DKtGJYWTWORATffxUtFLt1Cm3ibP0YVtfRicERVhsSickhgZic2w/132'></image>
-              <view class='time'>{{item.created_at}}</view>
+            <view class='footer'>
+              <view class='nickname'>叶子</view>
+              <view class='time'>1小时前</view>
             </view>
           </view>
-        </view>
-      </view>
-
-      <view class='item-right'>
-        <view class='item' wx:for="{{rightList}}" wx:key="{{rightList}}" bindtap='openDetail' data-id='{{item.id}}'>
-          <view class='item-sub'>
-            <view class='title'>{{item.title}}</view>
-            <view class='content'>{{item.content}}</view>
-            <view class='user-info'>
-              <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLH5qHgJP9SCYIFMWAOlfITibfn742Ytxg8I8DOEkrfxicJxe2mHyNASx3dU5a1riblV6RkPVI2vxk3g/132'></image>
-              <view class='time'>{{item.created_at}}</view>
-            </view>
+          <view class='right'>
+            <image mode='aspectFill' 
+                   bindtap='previewMoreImage' 
+                   data-image='{{item.attachment[0]}}'
+                   data-images='{{item.attachments}}'
+                   src='{{item.attachments[0]}}'></image>
           </view>
         </view>
-      </view>
+
+        <!-- 上下布局 -->
+        <view class='up-down' wx:if="{{item.attachments.length > 1}}">
+          <view class='header' data-id='{{item.id}}' bindtap='openDetail'>
+            <view class='title'>{{item.title}}</view>
+          </view>
+          <view class='body'>
+            <image src='{{sub}}'
+                   bindtap='previewMoreImage'
+                   data-image='{{sub}}' 
+                   data-images='{{item.attachments}}'
+                   mode='aspectFill' 
+                   wx:for="{{item.attachments}}" 
+                   wx:key="{{item.attachments}}" wx:for-item="sub"></image>
+          </view>
+          <view class='footer'>
+            <view class='nickname'>叶子</view>
+            <view class='time'>1小时前</view>
+            <view class='view'>浏览100次</view>
+          </view>
+        </view>
+
+      </view>    
     </view>
   </view>
 </view>
+
+<view class='get-more' wx:if="{{showGeMoreLoadin}}">
+  <view class='get-more-item'>
+    <image src='/image/get-more.gif' mode='aspectFit'></image>
+    <view class='loading'>加载中</view>
+  </view>
+</view>
+
+<view class='no-more-data' wx-if="{{notDataTips && list.length != 0}}">
+  <view>别扯了，到底啦~_~</view>
+</view>
+
+
+
+

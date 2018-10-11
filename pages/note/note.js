@@ -2,42 +2,50 @@ const app = getApp()
 
 Page({
   data: {
-    leftList:[],
-    rightList:[],
-    leftLength:1,
-    rightLength:0
+    list: [],
   },
   onLoad: function (options) {
     let _this = this;
-    app.http("GET", `/notes`, {}, function (res) {
+    this.getList();
+  },
+
+  getList() {
+    let _this = this;
+    app.http("GET", "/notes" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}&note_type=3`, {}, function (res) {
+      _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
-      if(resData.error_code == 0){
-        let list = resData.data.page_data;
-        let leftArray = _this.data.leftList;
-        let rightArray = _this.data.rightList;
-        let leftLen = _this.data.leftLength;
-        let rightLen = _this.data.rightLength;
-
-        list.map(item=>{
-          if (leftLen >= rightLen){
-            rightArray.push(item);
-            rightLen += item.title_length;
-          }else{
-            leftArray.push(item)
-            leftLen += item.title_length;
-          }
-        })
-
-        _this.setData({
-          leftList: leftArray,
-          rightList: rightArray,
-          leftLength: leftLen,
-          rightLength: rightLen
-        })
+      let list = _this.data.list;
+      if (resData.error_code == 0) {
+        if (resData.data != undefined) {
+          resData.data.page_data.map(item => {
+            list.push(item)
+          })
+          _this.setData({
+            list: list,
+            pageNumber: _this.data.pageNumber + 1
+          })
+        } else {
+          _this.setData({ notDataTips: true })
+        }
       }
-      
     })
   },
+
+  /**
+  * 预览图片
+  */
+  previewMoreImage: function (e) {
+    let _this = this;
+
+    let images = e.currentTarget.dataset.images;
+    let image = e.currentTarget.dataset.image;
+
+    wx.previewImage({
+      current: image,
+      urls: images
+    })
+  },
+
   /**
  * 进入专辑详情页面
  */

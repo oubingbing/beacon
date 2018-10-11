@@ -50,35 +50,6 @@ Page({
     
   },
 
-  downloadImage: function (e) {
-    let id = e.currentTarget.dataset.id;
-    let objId = e.currentTarget.dataset.objid;
-    let _this = this;
-    wx.showLoading({
-      title: '图片保存中...',
-    });
-    wx.downloadFile({
-      url: id,
-      success: function (res) {
-        if (res.statusCode === 200) {
-          wx.saveImageToPhotosAlbum({
-            filePath: res.tempFilePath,
-            success(res) {
-              wx.hideLoading();
-              _this.saveDownload(objId,1);
-            },
-            fail(res) {
-              wx.showToast({
-                title: '保存图片失败！',
-              })
-            }
-          })
-        }
-      }
-    })
-
-  },
-
   shareInfo: function (id, type) {
     app.http("GET", `/app/share`,{}, function (res) {
       console.log(res)
@@ -93,7 +64,7 @@ Page({
 
   getList(){
     let _this = this;
-    app.http("GET", "/article"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }`, {}, function (res) {
+    app.http("GET", "/notes"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }&note_type=2`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
@@ -151,17 +122,14 @@ Page({
   /**
  * 预览图片
  */
-  previewMoreImage: function (event) {
+  previewMoreImage: function (e) {
     let _this = this;
 
-    let images = event.currentTarget.dataset.obj.map(item=>{
-      return _this.data.baseImageUrl+item;
-    });
-
-    let url = event.target.id;
+    let images = e.currentTarget.dataset.images;
+    let image = e.currentTarget.dataset.image;
 
     wx.previewImage({
-      current: url,
+      current: image,
       urls: images
     })
   },

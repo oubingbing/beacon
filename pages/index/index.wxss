@@ -4,151 +4,132 @@ page{
   flex-direction: column;
 }
 
-.container{
+.body{
+  width: 100%;
+  display: flex;
+}
+
+.body .body-content{
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.content{
+.body-content .content{
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15rpx;
   background: white;
+  margin-bottom: 20rpx;
+  align-items: center;
 }
 
-.content .content-item{
+.body-content .content-item{
   width: 90%;
   display: flex;
   flex-direction: column;
-}
-
-.content .header{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header .user-info{
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.user-info .user{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 10rpx;
-}
-
-.user .time{
-  font-size: 30rpx;
-  color: darkgray;
-}
-
-.user-info image{
-  width: 90rpx;
-  height: 90rpx;
-  border-radius: 45rpx;
-}
-
-.header .operation{
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 35rpx;
-}
-
-.content-item .content-wall{
-  width: 100%;
-  padding-bottom: 10rpx;
-  padding-top: 10rpx;
-}
-
-.title .title-content{
-  display: inline;
-}
-
-
-.content-wall .detail{
-  color: #1874CD;
-  display: inline;
-}
-
-.operation .follow{
-  height: 100%;
-}
-
-.attachments{
+  margin-bottom: 10rpx;
+  padding-bottom: 20rpx;
   padding-top: 20rpx;
+}
+
+.content-item .left-right{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 220rpx;
+}
+
+.content-item .up-down{
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.attachments-single-image image{
-  width: 100%;
-  height: 320rpx;
-}
-
-.attachments .attachments-more-image{
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-}
-
-.attachments-more-image image{
-  width: 180rpx;
-  height: 180rpx;
-  margin-right: 10rpx;
-}
-
-.footer{
+.up-down .body{
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.body .header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left .title{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 3; 
+}
+
+.header .title{
+  width: 100%;
+
+  padding-top: 10rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+}
+
+.body image{
+  height: 150rpx;
+  width: 210rpx;
+  padding-right: 12rpx;
+  padding-top: 20rpx;
+}
+
+.up-down .footer{
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  font-size: 25rpx;
   padding-bottom: 10rpx;
   padding-top: 10rpx;
+}
+
+.left-right .left{
+  width: 68%;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  padding: 10rpx;
 }
 
-.footer .footer-content{
+.left-right .right{
+    width: 30%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
 }
 
-.footer .footer-icon{
+.right image{
+  width: 100%;
+  height: 200rpx;
+}
+
+.left-right .footer{
+  width: 100%;
   display: flex;
   flex-direction: row;
-}
-
-.footer-icon image{
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.footer .user,.time{
-  font-size: 30rpx;
   color: gray;
+  font-size: 25rpx;
 }
 
-.footer .user{
+.footer .nickname{
   margin-right: 20rpx;
 }
+
+.footer .time{
+  margin-right: 20rpx;
+}
+
 
 /** 授权按钮 **/
 .auth-container{

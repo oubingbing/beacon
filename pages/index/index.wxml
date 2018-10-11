@@ -12,60 +12,67 @@
   </view>
 </view>
 
-<view class='container'>
-  <view class='content' wx:for="{{list}}" wx:key="{{list}}">
-    <view class='content-item'>
+<view class='body'>
+  <view class='body-content'>
+    <view class='content' wx:for="{{list}}" wx:key="{{list}}">
 
-        <view class='content-wall'>
-          <view class='title' bindtap='openDetail' data-id='{{item.id}}'>
-            <view class='title-content'>{{item.title}}</view>
-          </view>
-          <view class='attachments' wx:if="{{item.cover_image[0] != null}}">
-            <view class="attachments-single-image">
-                <image mode="aspectFill" 
-                      class="image-item" 
-                      wx:for-item="sub"
-                      wx:for="{{item.cover_image}}" 
-                      wx:key="{{item.cover_image}}"
-                      src="{{sub}}"
-                      id="{{sub}}"></image>
-              </view>
-              <view class='attachments-more-image' 
-                    wx:if='{{item.cover_image.length>1}}'>
-                <image mode="aspectFill" 
-                      class="image-item" 
-                      wx:for-item="sub"
-                      wx:for="{{item.cover_image}}" 
-                      wx:key="{{item.cover_image}}"
-                      src="{{sub}}" 
-                      id="{{sub}}"></image>
-              </view>
-          </view>
-          <view class='footer'>
-            <view class='footer-content'>
-              <view class='user'>叶子</view>
-              <view class='time'>1天前</view>
+      <view class='content-item'>
+
+        <!-- 左右布局 -->
+        <view class='left-right' wx:if="{{item.attachments.length == 1}}">
+          <view class='left' bindtap='openDetail' data-id='{{item.id}}'>
+            <view class='title'>{{item.title}}</view>
+            <view class='footer'>
+              <view class='nickname'>叶子</view>
+              <view class='time'>1小时前</view>
+              <view class='view'>浏览100次</view>
             </view>
-            <view class='footer-icon'>
-              <image src='/image/share.png'></image>
-            </view>
+          </view>
+          <view class='right'>
+            <image mode='aspectFill' 
+                   src='{{item.attachments[0]}}' 
+                   bindtap='previewMoreImage' 
+                   data-image='{{item.attachment[0]}}'
+                   data-images='{{item.attachments}}'></image>
           </view>
         </view>
 
-      </view>
+        <!-- 上下布局 -->
+        <view class='up-down' wx:if="{{item.attachments.length > 1}}">
+          <view class='header' data-id='{{item.id}}' bindtap='openDetail'>
+            <view class='title'>{{item.title}}</view>
+          </view>
+          <view class='body'>
+            <image src='{{sub}}' 
+                   bindtap='previewMoreImage'
+                   data-image='{{sub}}' 
+                   data-images='{{item.attachments}}'
+                   mode='aspectFill'
+                   wx:for="{{item.attachments}}" 
+                   wx:key="{{item.attachments}}" wx:for-item="sub"></image>
+          </view>
+          <view class='footer'>
+            <view class='nickname'>叶子</view>
+            <view class='time'>1小时前</view>
+            <view class='view'>浏览100次</view>
+          </view>
+        </view>
+
+      </view>    
+    </view>
   </view>
 </view>
 
-  <view class='get-more' wx:if="{{showGeMoreLoadin}}">
-    <view class='get-more-item'>
-      <image src='/image/get-more.gif' mode='aspectFit'></image>
-      <view class='loading'>加载中</view>
-    </view>
+<view class='get-more' wx:if="{{showGeMoreLoadin}}">
+  <view class='get-more-item'>
+    <image src='/image/get-more.gif' mode='aspectFit'></image>
+    <view class='loading'>加载中</view>
   </view>
+</view>
 
-  <view class='no-more-data' wx-if="{{notDataTips && list.length != 0}}">
-    <view>别扯了，到底啦~_~</view>
-  </view>
+<view class='no-more-data' wx-if="{{notDataTips && list.length != 0}}">
+  <view>别扯了，到底啦~_~</view>
+</view>
 
 
 

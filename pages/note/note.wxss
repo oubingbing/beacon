@@ -1,101 +1,203 @@
 page{
   background-color:#F5F5F5;
+  display: flex;
+  flex-direction: column;
 }
 
-.container{
+.body{
+  width: 100%;
+  display: flex;
+}
+
+.body .body-content{
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.container .container-content{
+.body-content .content{
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: white;
   margin-bottom: 20rpx;
-}
-
-.container-content .content-item{
-  width: 98%;
-  display: flex;
-  flex-direction: row;
-}
-
-.content-item .item-left{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.item-left .item{
-  width: 95%;
-  background: white;
-  margin-top: 20rpx;
+.body-content .content-item{
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 10rpx;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
 }
 
-.item .item-sub{
-  padding: 10rpx;
-}
-
-.content-item .item-right{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item-right .item{
-  width: 95%;
-  background: white;
-  margin-top: 20rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.item .title{
-  font-size: 35rpx;
+.content-item .left-right{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  height: 220rpx;
 }
 
-.item .content{
-  font-size: 30rpx;
-  color: gray;
+.content-item .up-down{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.up-down .body{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.body .header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left .title{
   overflow: hidden;
   text-overflow:ellipsis;
   display: -webkit-box; 
-    -webkit-box-orient: vertical; 
-    -webkit-line-clamp: 5; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 3; 
 }
 
-.item .user-info{
+.header .title{
+  width: 100%;
+
+  padding-top: 10rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+}
+
+.body image{
+  height: 150rpx;
+  width: 210rpx;
+  padding-right: 12rpx;
+  padding-top: 20rpx;
+}
+
+.up-down .footer{
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  font-size: 25rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+}
+
+.left-right .left{
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.left-right .right{
+    width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right image{
+  width: 100%;
+  height: 200rpx;
+}
+
+.left-right .footer{
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 20rpx;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.user-info image{
-  height: 50rpx;
-  width: 50rpx;
-  border-radius: 25rpx;
-}
-
-.item .time{
-  font-size: 25rpx;
   color: gray;
+  font-size: 25rpx;
 }
+
+.footer .nickname{
+  margin-right: 20rpx;
+}
+
+.footer .time{
+  margin-right: 20rpx;
+}
+
+/** 加载更多 **/
+
+.get-more{
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30rpx;
+  font-weight: 200;
+  width: 100%;
+  background: white;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.get-more image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.get-more .get-more-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.loading{
+  margin-left: 15rpx;
+}
+
+.no-more-data{
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25rpx;
+  font-weight: 200;
+  text-align: center;
+  color: darkgray;
+}
+
+.message-tip{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100rpx;
+  align-items: center;
+  background: white;
+  margin-top: 75rpx;
+  margin-bottom: -72rpx;
+}
+
+.message-tip .tip-content{
+  padding: 20rpx;
+  background: #575757;
+  color: white;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.tip-content image{
+  width: 35rpx;
+  height: 35rpx;
+}
+

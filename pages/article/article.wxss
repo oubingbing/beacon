@@ -19,7 +19,7 @@
 }
 
 .container .title{
-  width: 95%;
+  width: 90%;
   margin-top: 20rpx;
   font-size: 40rpx;
 }

@@ -1,6 +1,9 @@
 <import src="/towxml/entry.wxml"/>
 
 <view class='container'>
+  <view class='header'>
+    
+  </view>
   <view class='title'>{{article.title}}</view>
 </view>
-<template is="entry" data="{{...content}}"/>
+<template bind:tap is="entry" data="{{...content}}"/>
