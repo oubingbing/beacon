@@ -11,7 +11,7 @@ Page({
 
   getList() {
     let _this = this;
-    app.http("GET", "/notes" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}&note_type=3`, {}, function (res) {
+    app.http("GET", "/notes" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}&note_type=1`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;

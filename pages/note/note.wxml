@@ -6,8 +6,8 @@
       <view class='content-item'>
 
         <!-- 左右布局 -->
-        <view class='left-right' wx:if="{{item.attachments.length == 1}}">
-          <view class='left' bindtap='openDetail' data-id='{{item.id}}'>
+        <view class='left-right' wx:if="{{item.attachments.length == 1}}" bindtap='openDetail' data-id='{{item.id}}'>
+          <view class='left'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
               <view class='nickname'>叶子</view>
@@ -15,30 +15,23 @@
             </view>
           </view>
           <view class='right'>
-            <image mode='aspectFill' 
-                   bindtap='previewMoreImage' 
-                   data-image='{{item.attachment[0]}}'
-                   data-images='{{item.attachments}}'
-                   src='{{item.attachments[0]}}'></image>
+            <image mode='aspectFill' src='{{item.attachments[0]}}'></image>
           </view>
         </view>
 
         <!-- 上下布局 -->
-        <view class='up-down' wx:if="{{item.attachments.length > 1}}">
-          <view class='header' data-id='{{item.id}}' bindtap='openDetail'>
+        <view class='up-down' wx:if="{{item.attachments.length > 1}}" data-id='{{item.id}}' bindtap='openDetail'>
+          <view class='header'>
             <view class='title'>{{item.title}}</view>
           </view>
           <view class='body'>
             <image src='{{sub}}'
-                   bindtap='previewMoreImage'
-                   data-image='{{sub}}' 
-                   data-images='{{item.attachments}}'
                    mode='aspectFill' 
                    wx:for="{{item.attachments}}" 
                    wx:key="{{item.attachments}}" wx:for-item="sub"></image>
           </view>
           <view class='footer'>
-            <view class='nickname'>叶子</view>
+            <view class='nickname'>{{item.poster.nickname}}</view>
             <view class='time'>1小时前</view>
             <view class='view'>浏览100次</view>
           </view>

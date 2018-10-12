@@ -1,9 +1,33 @@
 <import src="/towxml/entry.wxml"/>
 
 <view class='container'>
-  <view class='header'>
-    
-  </view>
   <view class='title'>{{article.title}}</view>
+  <view class='header' wx:if="{{article}}">
+    <view class='user-info'>
+      <view class='avatar'>
+        <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
+      </view>
+      <view class='nickname'>
+        <view class='name'>{{article.poster.nickname}}</view>
+        <view class='time'>1小时前</view>
+      </view>
+    </view>
+    <view class='follow'>
+      <view class='follow-button'>关注</view>
+    </view>
+  </view>
+  <view class='operate' wx:if="{{article}}">
+    <image src='/image/like-article.png'></image>
+    <image src='/image/collect-icon2.png'></image>
+    <image src='/image/shared-icon.png'></image>
+  </view>
 </view>
 <template bind:tap is="entry" data="{{...content}}"/>
+<view class='footer'>
+  <view class='note-category' wx:if="{{article}}">
+    <view class='label'>
+      <view><image src='/image/dir.png'></image></view>
+      <view>{{article.category.name}}</view>
+    </view>
+  </view>
+</view>

@@ -29,13 +29,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
-					"name": "专辑详情",
-					"pathName": "pages/album_detail/album_detail",
-					"query": "id=34"
+					"name": "日志详情",
+					"pathName": "pages/article/article",
+					"query": "id=8"
 				},
 				{
 					"id": -1,

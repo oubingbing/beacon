@@ -23,3 +23,117 @@
   margin-top: 20rpx;
   font-size: 40rpx;
 }
+
+.footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.note-category{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.note-category image{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.note-category .label{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  padding: 20rpx;
+  justify-content: flex-start;
+  align-items: center;
+  border-style:solid;
+  border-width:1rpx;
+  border-color: #F0F8FF;
+  border-radius: 10rpx;
+}
+
+.header{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.header .user-info{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header .follow{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.follow .follow-button{
+  background: #EE4000;
+  color: white;
+  font-size:25rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  border-radius: 10rpx; 
+}
+
+.user-info .avatar{
+  width:20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+}
+
+.user-info .nickname{
+  width: 80%;
+}
+
+.nickname .name{
+  font-size: 30rpx;
+}
+
+.nickname .time{
+  font-size: 25rpx;
+  color: darkgray;
+}
+
+.operate{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+
+.operate image{
+  width: 60rpx;
+  height: 60rpx;
+  background: white;
+  border-radius: 30rpx;
+}
