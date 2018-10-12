@@ -3,8 +3,8 @@
 
 
     <view class='content'>
-      <view class='my-note'>
-        <view class='label'>我的笔记簿</view>
+      <view class='my-label'>我的笔记簿</view>
+      <scroll-view class='my-note' scroll-y>
         <view class='note-container'>
 
           <view class='note' bindtap='triggerNoteList'>
@@ -92,7 +92,7 @@
           </view>
 
         </view>
-      </view>
+      </scroll-view>
     </view>
 
     <view class='alert-container' wx:if="{{showNoteList}}">

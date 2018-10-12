@@ -39,9 +39,9 @@ page{
   background: white;
 }
 
-.my-note .label{
+.my-label{
   font-size: 35rpx;
-  z-index: 10;
+  z-index: 100;
   position: absolute;
   top: 27rpx;
   left: 50rpx;
