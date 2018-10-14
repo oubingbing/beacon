@@ -1,66 +1,118 @@
-// pages/bindPhone/bindPhone.js
+const app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    phone:"",
+    code:"",
+    tip:"",
+    showTime:false,
+    time:90
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
   
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 发送验证码
    */
-  onReady: function () {
-  
+  getMessageCode:function(){
+    let phone = this.data.phone;
+    if(phone == ''){
+      wx:wx.showToast({
+        title: '手机号不能为空',
+        icon: "none",
+      })
+      return false;
+    }
+
+    let _this = this;
+
+    app.http("POST", `/send_message`, {phone:phone}, function (res) {
+      let resData = res.data;
+      if (resData.error_code == 0) {
+        _this.showTimeInfo();
+        wx: wx.showToast({
+          title: '验证码已发送',
+          icon: "none",
+        })
+      }else{
+        wx: wx.showToast({
+          title: resData.error_message,
+          icon: "none",
+        })
+      }
+    })
+  },
+
+  postBind:function(){
+
+    console.log("post")
+
+    let phone = this.data.phone;
+    let code = this.data.code;
+
+    if (phone == '') {
+      wx: wx.showToast({
+        title: '手机号不能为空',
+        icon: "none",
+      })
+      return false;
+    }
+
+    if (code == '') {
+      wx: wx.showToast({
+        title: '验证码不能为空',
+        icon: "none",
+      })
+      return false;
+    }
+
+    app.http("POST", `/bind_user`, { phone: phone,code:code }, function (res) {
+      let resData = res.data;
+      if (resData.error_code == 0) {
+        wx: wx.showToast({
+          title: "绑定成功",
+          icon: "none",
+        })
+
+      } else {
+        wx: wx.showToast({
+          title: resData.error_message,
+          icon: "none",
+        })
+      }
+    })
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 显示倒计时
    */
-  onShow: function () {
-  
+  showTimeInfo:function(){
+    let limitTime = 90;
+    this.setData({ showTime: true });
+    let int = setInterval(function () {
+      this.setData({ time: (limitTime--) });
+      if (limitTime < 0) {
+        clearInterval(int);
+        this.setData({ showTime: false });
+      }
+    }.bind(this), 1000)
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 绑定手机号码输入框的值
    */
-  onHide: function () {
-  
+  bindPhoneInput:function(e){
+    this.setData({ phone: e.detail.value})
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 绑定验证码输入框的值
    */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  bindCodeInput: function (e) {
+    this.setData({ code: e.detail.value })
   }
+
 })

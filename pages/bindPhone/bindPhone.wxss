@@ -1,1 +1,129 @@
-/* pages/bindPhone/bindPhone.wxss */
+page{
+  background-color:#F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding-bottom: 30rpx;
+}
+
+.body .content{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+
+.content .input-phone{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+  align-items: center;
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: #F5F5F5;
+  border-radius: 10rpx;
+  padding-bottom: 30rpx;
+}
+
+.input-phone .label{
+  width: 20%;
+}
+
+.input-phone .phone{
+  width: 75%;
+  background: gainsboro;
+  color: gray;
+  padding: 15rpx;
+  border-radius: 10rpx;
+}
+
+.content .input-code{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx;
+  padding-top: 30rpx;
+}
+
+.input-code .label{
+  width: 20%;
+}
+
+.input-code .code-div{
+  width:78%; 
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.code-div .code{
+  background: gainsboro;
+  color: gray;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  width: 60%;
+}
+
+.code-div .send-message{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.send-message .button{
+    background: #66CDAA;
+    padding: 15rpx;
+    color: white;
+    border-radius: 10rpx;
+    font-size: 30rpx;
+}
+
+.submit{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+
+.submit .submit-button{
+  width: 95%;
+  background: #66CDAA;
+  text-align: center;
+  color: white;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  border-radius: 10rpx;
+}
+
+.tips{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.tips .tip-content{
+  width: 95%;
+  font-size: 30rpx;
+  color: darkgray;
+}

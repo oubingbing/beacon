@@ -1,2 +1,36 @@
-<!--pages/bindPhone/bindPhone.wxml-->
-<text>pages/bindPhone/bindPhone.wxml</text>
+<show-toast prop-tip="{{tip}}" prop-duration="2000"></show-toast>
+
+<view class='container'>
+  <view class='body'>
+    <view class='content'>
+
+      <view class='input-phone'>
+        <view class='label'>手机号</view>
+        <input type='text' bindinput="bindPhoneInput" class='phone'/>
+      </view>
+
+      <view class='input-code'>
+        <view class='label'>验证码</view>
+        <view class='code-div'>
+          <input type='text' bindinput='bindCodeInput' class='code'/>
+          <view class='send-message' bindtap='getMessageCode' wx:if="{{!showTime}}">
+            <view class='button'>获取验证码</view>
+          </view>
+          <view class='send-message' wx:if="{{showTime}}">
+            <view class='button'>{{time}}s</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='submit' bindtap='postBind'>
+     <view class='submit-button'>绑定</view>
+  </view>
+
+  <view class='tips'>
+    <view class='tip-content'>
+      绑定灯塔笔记后台账号，灯塔笔记中相关信息会同步到次账号的小程序中，您可以在绑定账号后在小程序中查看您的笔记信息，方便日常的工作。还没有账号的可以登录https://www.qiuhuiyi.cn中注册账号。
+    </view>
+  </view>
+</view>

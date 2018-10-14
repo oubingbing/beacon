@@ -50,18 +50,6 @@ Page({
     
   },
 
-  shareInfo: function (id, type) {
-    app.http("GET", `/app/share`,{}, function (res) {
-      console.log(res)
-      let resData = res.data;
-      if(resData.code ==0){
-        console.log(resData.data.shareImage)
-        app.globalData.shareImage = resData.data.shareImage;
-        app.globalData.shareWord = resData.data.shareWord;
-      }
-    })
-  },
-
   getList(){
     let _this = this;
     app.http("GET", "/notes"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }&note_type=2`, {}, function (res) {
