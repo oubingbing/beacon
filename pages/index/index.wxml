@@ -14,7 +14,7 @@
 
 <view class='body'>
   <view class='body-content'>
-    <view class='content' wx:for="{{list}}" wx:key="{{list}}">
+    <view class='content' wx:for="{{list}}" wx:key="{{list.id}}">
       <view class='content-item'>
 
         <!-- 左右布局 -->

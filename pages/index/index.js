@@ -127,6 +127,8 @@ Page({
   openDetail: function (e) {
     let id = e.currentTarget.dataset.id;
 
+    console.log(e)
+
     wx.navigateTo({
       url: '/pages/article/article?id='+id
     })

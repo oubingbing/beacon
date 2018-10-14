@@ -7,7 +7,7 @@
       <scroll-view class='my-note' scroll-y>
         <view class='note-container'>
 
-          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' wx:for="{{myList}}" wx:key="{{myList}}">
+          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' wx:for="{{myList}}" wx:key="{{myList.id}}">
             <image src='/image/dir.png'></image>
             <view class='title'>{{item.name}}</view>
           </view>
