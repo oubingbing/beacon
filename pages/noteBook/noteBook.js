@@ -1,38 +1,61 @@
-// pages/noteBook/noteBook.js
+var app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    showNoteList:false
+    showNoteList:false,
+    myList:"",
+    notes:""
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    this.myCategories();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
   
   },
 
-  triggerNoteList:function(){
-    console.log("tap");
+  myCategories:function(){
+    let _this = this;
+    app.http('get', `/my_categories`,{}, res => {
+      let resData = res.data;
+      if (resData.error_code == 0){
+        _this.setData({myList:resData.data});
+      }
+    })
+  },
+
+  categoryNotes:function(id){
+    let _this = this;
+    app.http('get', `/category_notes/${id}`, {}, res => {
+      let resData = res.data;
+      if (resData.error_code == 0) {
+        _this.setData({ notes: resData.data, showNoteList: true });
+      }
+    })
+  },
+
+  triggerNoteList:function(e){
+    let id = e.currentTarget.dataset.id;
+    this.setData({ notes:""})
     let show = this.data.showNoteList;
     if(show){
       this.setData({
         showNoteList: false
       })
     }else{
-      this.setData({
-        showNoteList: true
-      })
+      this.categoryNotes(id);
     }
-  }
+  },
+  /**
+   * 进入专辑详情页面
+   */
+  openDetail: function (e) {
+    let id = e.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + id
+    })
+  },
 })

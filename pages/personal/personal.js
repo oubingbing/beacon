@@ -59,9 +59,9 @@ Page({
   /**
    * 进入消息列表
    */
-  openMessage: function () {
+  openBind: function () {
     wx.navigateTo({
-      url: '/pages/message/message?type=0&new_message=0'
+      url: '/pages/bindPhone/bindPhone'
     })
   },
   /**

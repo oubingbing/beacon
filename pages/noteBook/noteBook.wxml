@@ -7,88 +7,9 @@
       <scroll-view class='my-note' scroll-y>
         <view class='note-container'>
 
-          <view class='note' bindtap='triggerNoteList'>
+          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' wx:for="{{myList}}" wx:key="{{myList}}">
             <image src='/image/dir.png'></image>
-            <view class='title'>springboot教程sdfsdfsdfsdfsdfsdfsdsdf</view>
-          </view>
-
-          <view class='note' bindtap='triggerNoteList'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>java</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>前端技术集合</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-                    <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-
-                    <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-
-                    <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
-          </view>
-
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>php</view>
-          </view>
-
-          <view class='note'>
-            <image src='/image/dir.png'></image>
-            <view class='title'>mysql</view>
+            <view class='title'>{{item.name}}</view>
           </view>
 
         </view>
@@ -98,76 +19,14 @@
     <view class='alert-container' wx:if="{{showNoteList}}">
       <scroll-view scroll-y class='alert-content'>
           <image class='close-icon' src='/image/close.png' bindtap='triggerNoteList'></image>
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>laravel部署教程</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
 
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>laravel部署教程</view>
-              <view class='time'>2018-10-1 12:21:11</view>
+          <view class='file-item' wx:for="{{notes}}" wx:key="{{notes}}" data-id='{{item.id}}' bindtap='openDetail'>
+            <view class='image-container'>
+              <image src='/image/markdown.png'></image>
             </view>
-          </view>
-
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
             <view class='file-title'>
-              <view class='title'>laravel队列</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>单元测试</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>collection</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-                    <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>laravel队列</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>单元测试</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>collection</view>
-              <view class='time'>2018-10-1 12:21:11</view>
-            </view>
-          </view>
-
-          
-          <view class='file-item'>
-            <image src='/image/markdown.png'></image>
-            <view class='file-title'>
-              <view class='title'>collection</view>
-              <view class='time'>2018-10-1 12:21:11</view>
+              <view class='title'>{{item.title}}</view>
+              <view class='time'>{{item.created_at}}</view>
             </view>
           </view>
 

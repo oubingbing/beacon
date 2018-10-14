@@ -127,20 +127,31 @@ page{
   border-color: gainsboro;
 }
 
-.file-item image{
+.file-item .image-container{
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+}
+
+.image-container image{
   width: 100rpx;
   height: 100rpx;
   margin-left: 10rpx;
 }
 
+.file-item .file-title{
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+
 .file-title .title{
   overflow: hidden;
   text-overflow:ellipsis;
-  white-space: nowrap;
-}
-
-.file-item .file-title{
-  font-size: 30rpx;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
 }
 
 .file-title .time{

@@ -15,7 +15,7 @@
       </view>
   </view>
 
-  <view class='message' bindtap='openMessage'>
+  <view class='message' bindtap='openBind'>
     <view><image src='/image/bond.png' class='item-image'></image></view>
     <view class='word'>绑定</view>
   </view>
