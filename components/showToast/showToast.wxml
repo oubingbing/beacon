@@ -1,5 +1,0 @@
-<view class="container" style='display:{{display}}'>
-
-    <view class='tips'>{{tip}}</view>
-
-</view>
