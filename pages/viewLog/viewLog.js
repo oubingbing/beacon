@@ -4,8 +4,11 @@ Page({
   data: {
     list: [],
     pageSize: 10,
-    pageNumber: 0,
-    initPageNumber: 0,
+    pageNumber: 1,
+    initPageNumber: 1,
+    showGeMoreLoadin: false,
+    notDataTips: false,
+    ObjType:""
   },
 
   onLoad: function (options) {
@@ -16,17 +19,17 @@ Page({
       this.getViewList();
       wx.setNavigationBarTitle({ title: "浏览记录" })
     }
+    this.setData({ ObjType:options.type})
   },
 
   getCollectList() {
     let _this = this;
-    app.http("GET", "/collect_note" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}`, {}, function (res) {
+    app.http("GET", "/collect_note" + `?page_size=${this.data.pageSize}&page_number=${this.data.pageNumber}`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
       if (resData.error_code == 0) {
-        if (resData.data != undefined) {
-          console.log(resData.data.page_data)
+        if (resData.data.page_data.length > 0) {
           resData.data.page_data.map(item => {
             list.push(item.note)
           })
@@ -43,12 +46,12 @@ Page({
 
   getViewList() {
     let _this = this;
-    app.http("GET", "/view_log" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}`, {}, function (res) {
+    app.http("GET", "/view_log" + `?page_size=${this.data.pageSize}&page_number=${this.data.pageNumber}`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
       if (resData.error_code == 0) {
-        if (resData.data != undefined) {
+        if (resData.data.page_data.length > 0) {
           console.log(resData.data.page_data)
           resData.data.page_data.map(item => {
             list.push(item.note)
@@ -73,5 +76,20 @@ Page({
     wx.navigateTo({
       url: '/pages/article/article?id=' + id
     })
+  },
+
+  /** 上拉加载更多
+  */
+  onReachBottom: function () {
+    this.setData({
+      showGeMoreLoadin: true,
+      notDataTips: false
+    })
+
+    if (this.data.ObjType == 1){
+      this.getCollectList();
+    }else{
+      this.getViewList();
+    }
   },
 })

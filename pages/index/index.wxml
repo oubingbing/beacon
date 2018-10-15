@@ -62,7 +62,7 @@
   </view>
 </view>
 
-<view class='no-more-data' wx-if="{{notDataTips && list.length != 0}}">
+<view class='no-more-data' wx-if="{{notDataTips}}">
   <view>别扯了，到底啦~_~</view>
 </view>
 

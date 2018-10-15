@@ -7,7 +7,8 @@
     "pages/noteBook/noteBook",
     "pages/bindPhone/bindPhone",
     "pages/viewLog/viewLog",
-    "pages/follow/follow"
+    "pages/follow/follow",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

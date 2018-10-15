@@ -4,8 +4,10 @@ Page({
   data: {
     list: [],
     pageSize: 10,
-    pageNumber: 0,
-    initPageNumber: 0,
+    pageNumber: 1,
+    initPageNumber: 1,
+    showGeMoreLoadin: false,
+    notDataTips: false,
   },
   onLoad: function (options) {
     let _this = this;
@@ -14,12 +16,14 @@ Page({
 
   getList() {
     let _this = this;
-    app.http("GET", "/notes" + `?pageSize=${this.data.pageSize}&pageNumber=${this.data.pageNumber}&note_type=1`, {}, function (res) {
+    _this.setData({ notDataTips: false})
+    app.http("GET", "/notes" + `?page_size=${this.data.pageSize}&page_number=${this.data.pageNumber}&note_type=1`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
+      console.log(resData.data)
       if (resData.error_code == 0) {
-        if (resData.data != undefined) {
+        if (resData.data.page_data.length > 0) {
           resData.data.page_data.map(item => {
             list.push(item)
           })
@@ -35,21 +39,6 @@ Page({
   },
 
   /**
-  * 预览图片
-  */
-  previewMoreImage: function (e) {
-    let _this = this;
-
-    let images = e.currentTarget.dataset.images;
-    let image = e.currentTarget.dataset.image;
-
-    wx.previewImage({
-      current: image,
-      urls: images
-    })
-  },
-
-  /**
  * 进入专辑详情页面
  */
   openDetail: function (e) {
@@ -58,5 +47,15 @@ Page({
     wx.navigateTo({
       url: '/pages/article/article?id=' + id
     })
+  },
+
+  /** 上拉加载更多
+   */
+  onReachBottom: function () {
+    this.setData({
+      showGeMoreLoadin: true,
+      notDataTips: false
+    })
+    this.getList();
   },
 })

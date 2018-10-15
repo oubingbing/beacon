@@ -35,8 +35,8 @@
     </view>
   </view>
 
-  <view class='suggestion' bindtap='openSugesstion'>
-    <view><image src='/image/suggestion.png' class='item-image'></image></view>
+  <view class='suggestion' bindtap='openAbout'>
+    <view><image src='/image/about.png' class='item-image'></image></view>
     <view class='word'>关于灯塔</view>
   </view>
 </view>

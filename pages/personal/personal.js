@@ -71,4 +71,13 @@ Page({
       url: '/pages/follow/follow'
     })
   },
+
+  /**
+   * 进入关注
+   */
+  openAbout: function () {
+    wx.navigateTo({
+      url: '/pages/about/about'
+    })
+  },
 })

@@ -7,8 +7,8 @@ Page({
     list:[],
     imageUrl: app.globalData.imageUrl,
     pageSize: 10,
-    pageNumber: 0,
-    initPageNumber: 0,
+    pageNumber: 1,
+    initPageNumber: 1,
     showGeMoreLoadin: false,
     notDataTips:false,
     sharecomeIn:false,
@@ -50,14 +50,17 @@ Page({
     
   },
 
+  /**
+   * 获取文章列表
+   */
   getList(){
     let _this = this;
-    app.http("GET", "/notes"+`?pageSize=${ this.data.pageSize }&pageNumber=${ this.data.pageNumber }&note_type=2`, {}, function (res) {
+    app.http("GET", "/notes"+`?page_size=${ this.data.pageSize }&page_number=${ this.data.pageNumber }&note_type=2`, {}, function (res) {
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;
       if (resData.error_code == 0) {
-        if(resData.data != undefined){
+        if (resData.data.page_data.length > 0){
           resData.data.page_data.map(item => {
             list.push(item)
           })
@@ -76,11 +79,11 @@ Page({
    * 上拉加载更多
    */
   onReachBottom: function () {
-    //this.setData({ 
-     // showGeMoreLoadin: true,
-     // notDataTips:false
-   // })
-    //this.getList();
+    this.setData({ 
+      showGeMoreLoadin: true,
+      notDataTips:false
+    })
+    this.getList();
   },
 
   /**
@@ -106,21 +109,6 @@ Page({
     });
   },
 
-
-  /**
- * 预览图片
- */
-  previewMoreImage: function (e) {
-    let _this = this;
-
-    let images = e.currentTarget.dataset.images;
-    let image = e.currentTarget.dataset.image;
-
-    wx.previewImage({
-      current: image,
-      urls: images
-    })
-  },
   /**
    * 进入专辑详情页面
    */
@@ -138,51 +126,6 @@ Page({
    * 分享
    */
   onShareAppMessage: function (res) {
-    let id = '';
-    let url  = res;
-    if (res.target != undefined){
-      id = res.target.id;
-      url = res.target.dataset.image;
-    }
 
-    console.log("url:"+url)
-    if(id != ''){
-      return {
-        title: '唯美图吧，唯美生活',
-        path: '/pages/index/index?id=' + id,
-        imageUrl: url,
-        success: function (res) {
-          // 转发成功
-        },
-        fail: function (res) {
-          // 转发失败
-        }
-      }
-    }else{
-      if (app.globalData.shareImage == ''){
-        return {
-          title: '唯美图吧，唯美生活',
-          path: '/pages/index/index?id=' + id,
-          success: function (res) {
-            // 转发成功
-          },
-          fail: function (res) {
-            // 转发失败
-          }
-        }
-      }else{
-        return {
-          title: app.globalData.shareWord,
-          path: '/pages/index/index',
-          imageUrl: app.globalData.imageUrl + app.globalData.shareImage,
-          success: function (res) {
-            // 转发成功
-          },
-          fail: function (res) {
-            // 转发失败
-          }
-        }
-      }
-    }
   },
 })

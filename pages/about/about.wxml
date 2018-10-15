@@ -1,0 +1,29 @@
+<view class='container'>
+  <view class='content'>
+    <view class='header'>
+      <image src='http://article.qiuhuiyi.cn/58c3e21171ca3.jpg'></image>
+    </view>
+    <view class='description'>
+      <view class='description-detail'>
+        大学灯塔是一个学习分享的小程序，已经毕业的师兄师姐可以在这分享自己大学成长的故事，为还在迷茫中的师弟师妹们指引方向。此外，这还是一个笔记共享的小社区，无论你是程序员还是其他行业，我们希望你能共享你的学习笔记，让我们一起成长吧。
+      </view>
+    </view>
+    <view class='contact'>
+      <view class='contact-item'>
+        <image src='/image/wechat.png'></image>
+        <view class='right'>bingbing_ou</view>
+      </view>
+        <view class='contact-item'>
+        <image src='/image/phone.png'></image>
+        <view class='right'>13425144866</view>
+      </view>
+      <view class='contact-item'>
+        <image src='/image/email.png'></image>
+        <view class='right'>875307054@qq.com</view>
+      </view>
+      <view class='footer'>
+        <view><image src='/image/qr_code.jpg'></image></view>
+      </view>
+    </view>
+  </view>
+</view>
