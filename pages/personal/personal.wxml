@@ -21,22 +21,22 @@
   </view>
 
   <view class='content-container'>
-    <view class='content-item say-love' bindtap="opendPostList">
+    <view class='content-item say-love' bindtap="openCollect">
       <view><image src='/image/my-collect.png' class='item-image'></image></view>
       <view class='word'>收藏</view>
     </view>
-    <view class='content-item sale' bindtap="openSaleList">
+    <view class='content-item sale' bindtap="openFollowUser">
       <view><image src='/image/follow.png' class='item-image'></image></view>
       <view class='word'>关注</view>
     </view>
-    <view class='content-item hide-love' bindtap="openMatchList">
+    <view class='content-item hide-love' bindtap="openViewLog">
       <view><image src='/image/note.png' class='item-image'></image></view>
-      <view class='word'>我的笔记</view>
+      <view class='word'>浏览记录</view>
     </view>
   </view>
 
   <view class='suggestion' bindtap='openSugesstion'>
     <view><image src='/image/suggestion.png' class='item-image'></image></view>
-    <view class='word'>联系客服</view>
+    <view class='word'>关于灯塔</view>
   </view>
 </view>

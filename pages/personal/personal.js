@@ -14,96 +14,43 @@ Page({
         user: userStorage
       })
     }
-    this.getPersonalInfo();
   },
-  onShow: function () {
-    //this.newLetterCount();
-  },
-  /**
-   * 获取客服id
-   */
-  getService: function () {
-    app.http('get', `/service`, {}, res => {
-      console.log('客服id:' + res.data.data);
-      this.setData({
-        serviceId: res.data.data
-      });
-    });
-  },
-  /**
-   * 获取个人信息
-   */
-  getPersonalInfo() {
-    let _this = this;
-    app.http('get', `/user`, {}, res => {
-      console.log(res.data.data);
-      _this.setData({
-        user: res.data.data
-      })
-      wx.setStorageSync('user', res.data.data);
-    });
-  },
-  /**
-   * 获取未读私信数量
-   */
-  newLetterCount: function () {
-    let _this = this;
 
-    app.http('get', `/new_messages`, {}, res => {
-      console.log(res.data.data);
-      _this.setData({
-        newLetterNumber: res.data.data
-      })
-    });
-  },
+
+
   /**
-   * 进入消息列表
+   * 进入绑定页面
    */
   openBind: function () {
     wx.navigateTo({
       url: '/pages/bindPhone/bindPhone'
     })
   },
+
   /**
-   * 进入私信列表
-   */
-  openLetter: function () {
+    * 进入收藏记录
+    */
+  openCollect: function () {
     wx.navigateTo({
-      url: '/pages/friends/friends'
+      url: '/pages/viewLog/viewLog?type=1'
     })
   },
+
   /**
-   * 进入建议留言列表
+   * 进入浏览记录
    */
-  openSugesstion: function () {
-    let id = this.data.serviceId;
-    console.log('客服id' + id);
+  openViewLog: function () {
     wx.navigateTo({
-      url: '/pages/letter/letter?friend_id=' + id
+      url: '/pages/viewLog/viewLog?type=2'
     })
   },
+
   /**
-   * 进入表白墙列表
+   * 进入浏览记录
    */
-  opendPostList: function () {
+  openFollowUser: function () {
     wx.navigateTo({
-      url: '/pages/post_list/post_list'
+      url: '/pages/follow/follow'
     })
   },
-  /**
-   * 进入卖舍友列表
-   */
-  openSaleList: function () {
-    wx.navigateTo({
-      url: '/pages/sale_list/sale_list'
-    })
-  },
-  /**
-   * 进入匹配列表
-   */
-  openMatchList: function () {
-    wx.navigateTo({
-      url: '/pages/match_list/match_list'
-    })
-  }
 })

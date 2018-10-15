@@ -1,0 +1,102 @@
+page{
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+.container .content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .body-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-content .content-item{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: gainsboro;
+}
+
+.content-item .left{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-item .right{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.right .follow-button{
+  background: #EE4000;
+  color: white;
+  font-size:25rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  border-radius: 10rpx; 
+}
+
+.right .follow-label{
+  font-size:25rpx;
+  border-style:solid;
+  border-width:1rpx;
+  border-color: darkgray;
+  border-radius: 10rpx;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+
+.left .avatar{
+  width: 23%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.left .nickname-info{
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nickname-info .nickname{
+  color: gray;
+}
+
+.nickname-info .follow-count{
+  font-size: 30rpx;
+  color: gray;
+}
+

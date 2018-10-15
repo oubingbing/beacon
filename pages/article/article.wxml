@@ -13,12 +13,19 @@
       </view>
     </view>
     <view class='follow'>
-      <view class='follow-button'>关注</view>
+      <view class='follow-button' wx:if="{{!article.follow_author}}" bindtap='follow' data-type='1'>关注</view>
+      <view class='follow-label' wx:else bindtap='cancelFollow' data-type='1'>已关注</view>
     </view>
   </view>
   <view class='operate' wx:if="{{article}}">
-    <image src='/image/like-article.png'></image>
-    <image src='/image/collect-icon2.png'></image>
+    <view>
+      <image src='/image/like-article.png' wx:if="{{!article.praise}}" bindtap='praise'></image>
+      <image src='/image/liked-icon.png' wx:else bindtap='praise' bindtap='cancelPraise'></image>
+    </view>
+    <view>
+      <image src='/image/collect-icon2.png' wx:if="{{!article.follow_note}}" bindtap='follow' data-type='3'></image>
+      <image src='/image/collected-icon.png' wx:else bindtap='cancelFollow' data-type='3'></image>
+    </view>
     <image src='/image/shared-icon.png'></image>
   </view>
 </view>

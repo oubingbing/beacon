@@ -96,6 +96,18 @@
   border-radius: 10rpx; 
 }
 
+.follow .follow-label{
+  font-size:25rpx;
+  border-style:solid;
+  border-width:1rpx;
+  border-color: darkgray;
+  border-radius: 10rpx;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
 .user-info .avatar{
   width:20%;
   display: flex;
@@ -133,8 +145,8 @@
 }
 
 .operate image{
-  width: 70rpx;
-  height: 70rpx;
+  width: 65rpx;
+  height: 65rpx;
   background: white;
-  border-radius: 35rpx;
+  border-radius: 30rpx;
 }

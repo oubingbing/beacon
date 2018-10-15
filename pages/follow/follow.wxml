@@ -1,0 +1,23 @@
+<view class="container">
+  <view class='content'>
+    <view class='body-content'>
+
+      <view class='content-item' wx:for="{{list}}" wx:key="{{list.id}}">
+        <view class='left'>
+          <view class='avatar'>
+            <image src='{{item.customer.avatar}}' wx:if="{{item.customer.avatar}}"></image>
+            <image src='/image/avatar.png' wx:else></image>
+          </view>
+          <view class='nickname-info'>
+            <view class='nickname'>{{item.customer.nickname}}</view>
+            <view class='follow-count'>{{item.follow_number}}关注</view>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='follow-label'>已关注</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
