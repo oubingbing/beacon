@@ -11,10 +11,11 @@ Page({
   onLoad: function (options) {
     if(options.type ==1){
       this.getCollectList();
+      wx.setNavigationBarTitle({title:"收藏"})
     }else{
       this.getViewList();
+      wx.setNavigationBarTitle({ title: "浏览记录" })
     }
-
   },
 
   getCollectList() {

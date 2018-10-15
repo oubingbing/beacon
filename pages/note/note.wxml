@@ -10,8 +10,9 @@
           <view class='main'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
-              <view class='nickname'>叶子</view>
+              <view class='nickname'>{{item.poster.nickname}}</view>
               <view class='time'>1小时前</view>
+              <view class='view'>{{item.statics?item.statics.view:0}}浏览</view>
             </view>
           </view>
         </view>
@@ -21,8 +22,9 @@
           <view class='left'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
-              <view class='nickname'>叶子</view>
+              <view class='nickname'>{{item.poster.nickname}}</view>
               <view class='time'>1小时前</view>
+              <view class='view'>{{item.statics?item.statics.view:0}}浏览</view>
             </view>
           </view>
           <view class='right'>
@@ -44,7 +46,7 @@
           <view class='footer'>
             <view class='nickname'>{{item.poster.nickname}}</view>
             <view class='time'>1小时前</view>
-            <view class='view'>浏览100次</view>
+            <view class='view'>{{item.statics?item.statics.view:0}}浏览</view>
           </view>
         </view>
 

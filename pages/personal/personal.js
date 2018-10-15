@@ -10,12 +10,30 @@ Page({
   onLoad: function () {
     let userStorage = wx.getStorageSync('user');
     if (userStorage) {
+      console.log(userStorage)
       this.setData({
         user: userStorage
       })
     }
+
+    this.getPersonalInfo();
   },
 
+  /**
+   * 获取个人信息
+   */
+  getPersonalInfo() {
+
+    let _this = this;
+
+    app.http('get', `/user`, {}, res => {
+      console.log(res.data.data);
+      _this.setData({
+        user: res.data.data
+      })
+      wx.setStorageSync('user', res.data.data);
+    });
+  },
 
 
   /**
@@ -46,7 +64,7 @@ Page({
   },
 
   /**
-   * 进入浏览记录
+   * 进入关注
    */
   openFollowUser: function () {
     wx.navigateTo({
