@@ -32,7 +32,7 @@
         "pagePath": "pages/note/note",
         "iconPath": "image/my-note.png",
         "selectedIconPath": "image/my-note-select.png",
-        "text": "共享笔记"
+        "text": "笔记"
       },
       {
         "pagePath": "pages/noteBook/noteBook",
