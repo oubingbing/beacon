@@ -151,5 +151,26 @@ Page({
           this.setData({ article: article })
         }
       })
-  }
+  },
+
+  /**
+ * 分享
+ */
+  onShareAppMessage: function (res) {
+    let id = this.data.article.id;
+    let url = this.data.article.attachments[0];
+    console.log("url:" + url)
+
+    return {
+      title: this.data.article.title,
+      path: '/pages/index/index?id=' + id,
+      imageUrl: url,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
 })

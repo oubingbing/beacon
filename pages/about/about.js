@@ -15,11 +15,14 @@ Page({
   onLoad: function (options) {
 
   },
+  /**
+   * 分享
+   */
   onShareAppMessage: function (res) {
     return {
-      title: app.globalData.shareWord,
+      title: "好似一叶扁舟独自远航，迷茫时才发现，灯塔早已亮起",
       path: '/pages/index/index',
-      imageUrl: app.globalData.imageUrl + app.globalData.shareImage,
+      imageUrl: "",
       success: function (res) {
         // 转发成功
       },

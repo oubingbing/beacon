@@ -26,7 +26,11 @@
       <image src='/image/collect-icon2.png' wx:if="{{!article.follow_note}}" bindtap='follow' data-type='3'></image>
       <image src='/image/collected-icon.png' wx:else bindtap='cancelFollow' data-type='3'></image>
     </view>
-    <image src='/image/shared-icon.png'></image>
+    <view class='share-button'>
+      <button class='button' open-type="share" style='border: none;'>
+        <image class='icon' src='/image/shared-icon.png'></image>
+      </button>
+    </view>
   </view>
 </view>
 <template bind:tap is="entry" data="{{...content}}"/>
