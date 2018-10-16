@@ -31,4 +31,14 @@ Page({
       }
     }
   },
+
+  /**
+  * 预览图片
+  */
+  previewImage: function () {
+    wx.previewImage({
+      current: 'http://article.qiuhuiyi.cn/qr_code.jpg',
+      urls: ["http://article.qiuhuiyi.cn/qr_code.jpg"]
+    })
+  },
 })

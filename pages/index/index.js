@@ -32,7 +32,7 @@ Page({
           if (eId != undefined) {
             that.setData({ sharecomeIn: false })
             wx.navigateTo({
-              url: '/pages/album_detail/album_detail?id=' + eId
+              url: '/pages/article/article?id=' + eId
             })
           }
         }
@@ -102,7 +102,7 @@ Page({
       if(sharecomeIn == true){
         _this.setData({ sharecomeIn: false })
         wx.navigateTo({
-          url: '/pages/album_detail/album_detail?id='+detailId
+          url: '/pages/article/article?id='+detailId
         })
       }
       _this.getList();

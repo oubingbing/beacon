@@ -3,8 +3,8 @@ App({
   onLaunch: function () {
 
     //设置基本接口全局变量
-    //this.globalData.apiUrl = 'https://www.qiuhuiyi.cn/api/wechat';
-    this.globalData.apiUrl = 'http://127.0.0.1:8000/api/wechat';
+    this.globalData.apiUrl = 'https://www.qiuhuiyi.cn/api/wechat';
+    //this.globalData.apiUrl = 'http://127.0.0.1:8000/api/wechat';
     
     this.globalData.imageUrl = 'http://article.qiuhuiyi.cn/';
 
