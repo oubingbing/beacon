@@ -20,8 +20,17 @@
       <view class='my-label' wx:if="{{select==2}}">共享笔记簿</view>
       <view class='my-label' wx:if="{{select==3}}">收藏的笔记簿</view>
       <scroll-view class='my-note' scroll-y bindscrolltolower="getMoreData">
+        <view class='none-conten-tips' wx:if="{{myList.length == 0}}">
+          <image src='/image/none.png'></image>
+        </view>
         <view class='note-container'>
-          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' data-name='{{item.name}}' wx:for="{{myList}}" wx:key="{{myList.id}}">
+          <view class='note' 
+
+                bindtap='triggerNoteList' 
+                data-id='{{item.id}}' 
+                data-name='{{item.name}}' 
+                wx:for="{{myList}}" 
+                wx:key="{{myList.id}}">
             <image src='/image/dir.png'></image>
             <view class='title'>{{item.name}}</view>
           </view>
@@ -31,6 +40,9 @@
 
     <view class='alert-container' wx:if="{{showNoteList}}">
       <scroll-view scroll-y class='alert-content'>
+          <view class='none-conten-tips' wx:if="{{notes.length == 0}}">
+            <image src='/image/none.png'></image>
+          </view>
           <image class='close-icon' src='/image/close.png' bindtap='triggerNoteList'></image>
           <view class='file-item' wx:for="{{notes}}" wx:key="{{notes.id}}" data-id='{{item.id}}' bindtap='openDetail'>
             <view class='image-container'>

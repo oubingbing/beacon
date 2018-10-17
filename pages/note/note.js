@@ -39,7 +39,7 @@ Page({
   },
 
   /**
- * 进入专辑详情页面
+ * 进入详情页面
  */
   openDetail: function (e) {
     let id = e.currentTarget.dataset.id;

@@ -4,7 +4,7 @@ Page({
 
   data: {
     showNoteList:false,
-    myList:"",
+    myList:[],
     notes:"",
     select:1,
     pageSize: 10,

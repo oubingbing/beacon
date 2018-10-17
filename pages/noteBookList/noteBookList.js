@@ -135,4 +135,15 @@ Page({
       }
     }
   },
+
+  /**
+  * 进入详情页面
+  */
+  openDetail: function (e) {
+    let id = e.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + id
+    })
+  },
 })
