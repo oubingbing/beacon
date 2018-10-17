@@ -11,7 +11,8 @@ Page({
     pageNumber: 1,
     initPageNumber: 1,
     selectId:'',
-    title:''
+    title:'',
+    showNone:false
   },
 
   onLoad: function (options) {
@@ -31,6 +32,9 @@ Page({
       let resData = res.data;
       if (resData.error_code == 0){
         _this.setData({myList:resData.data});
+        if(_this.data.myList.length == 0){
+          _this.setData({ showNone:true})
+        }
       }
     })
   },
@@ -121,6 +125,7 @@ Page({
         })
         this.setData({ 
           myList: tempArray,
+          showNone: this.data.myList.length==0?true:false,
           pageNumber: this.data.pageNumber + 1
         });
       }
@@ -128,7 +133,7 @@ Page({
   },
 
   /**
-   * 获取我分享的笔记簿列表
+   * 获取我收藏的笔记簿列表
    */
   followCategoies:function(){
     app.http('get', `/follow_categories?page_size=${this.data.pageSize}&page_number=${this.data.pageNumber}`, {}, res => {
@@ -140,7 +145,8 @@ Page({
         })
         this.setData({
           myList: tempArray,
-          pageNumber: this.data.pageNumber + 1
+          pageNumber: this.data.pageNumber + 1,
+          showNone: this.data.myList.length == 0 ? true : false,
         });
       }
     })
@@ -154,7 +160,8 @@ Page({
     this.setData({
       select: objType,
       myList:[],
-      pageNumber: this.data.initPageNumber
+      pageNumber: this.data.initPageNumber,
+      showNone:false
     })
 
     switch(objType){

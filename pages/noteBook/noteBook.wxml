@@ -20,7 +20,7 @@
       <view class='my-label' wx:if="{{select==2}}">共享笔记簿</view>
       <view class='my-label' wx:if="{{select==3}}">收藏的笔记簿</view>
       <scroll-view class='my-note' scroll-y bindscrolltolower="getMoreData">
-        <view class='none-conten-tips' wx:if="{{myList.length == 0}}">
+        <view class='none-conten-tips' wx:if="{{showNone}}">
           <image src='/image/none.png'></image>
         </view>
         <view class='note-container'>
