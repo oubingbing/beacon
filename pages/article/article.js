@@ -11,6 +11,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    });
     let id = options.id;
     this.getNote(id);
     this.setData({id:id})
@@ -41,6 +44,7 @@ Page({
           content: data,
           article: res.data.data
         });
+        wx.hideLoading();
       })
   },
 
@@ -151,5 +155,32 @@ Page({
           this.setData({ article: article })
         }
       })
+  },
+
+  /**
+ * 分享
+ */
+  onShareAppMessage: function (res) {
+    let id = this.data.article.id;
+    let url = this.data.article.attachments[0];
+    console.log("url:" + url)
+
+    return {
+      title: this.data.article.title,
+      path: '/pages/index/index?id=' + id,
+      imageUrl: url,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
+
+  categoryDetail:function(){
+    wx.navigateTo({
+      url: '/pages/noteBookList/noteBookList?id=' + this.data.article.category_id
+    })
   }
 })

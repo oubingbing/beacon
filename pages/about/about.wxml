@@ -1,7 +1,7 @@
 <view class='container'>
   <view class='content'>
     <view class='header'>
-      <image src='http://article.qiuhuiyi.cn/58c3e21171ca3.jpg'></image>
+      <image src='/image/ligth.png'></image>
     </view>
     <view class='description'>
       <view class='description-detail'>
@@ -21,7 +21,7 @@
         <image src='/image/email.png'></image>
         <view class='right'>875307054@qq.com</view>
       </view>
-      <view class='footer'>
+      <view class='footer' bindtap='previewImage'>
         <view><image src='/image/qr_code.jpg'></image></view>
       </view>
     </view>

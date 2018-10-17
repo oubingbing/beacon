@@ -58,4 +58,21 @@ Page({
     })
     this.getList();
   },
+
+  /**
+ * 分享
+ */
+  onShareAppMessage: function (res) {
+    return {
+      title: "好似一叶扁舟独自远航，迷茫时才发现，灯塔早已亮起",
+      path: '/pages/index/index',
+      imageUrl: "",
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
 })

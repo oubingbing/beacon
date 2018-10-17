@@ -1,0 +1,80 @@
+<view class="container">
+  <view class='body'>
+    <view class='content'>
+
+      <view class='header-container' wx:if="{{showInfo}}">
+        <view class='title'>
+          <view class='title-content'>微信小程序基础教程</view>
+          <view class='notebook-collect'>
+            <image src="/image/collect-icon.png" wx:if="{{!followCategory}}" bindtap='followCategory'></image>
+            <image src="/image/my-collect.png" wx:else bindtap='cancelFollowCategory'></image>
+          </view>
+        </view>
+        <view class='user-container'>
+          <view class='user-info'>
+            <view class='avatar'>
+              <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
+            </view>
+            <view class='nickname'>
+              <view class='name'>叶子</view>
+            </view>
+          </view>
+          <view class='follow'>
+            <view class='follow-button' wx:if="{{!followAuthor}}" bindtap='followAuthor'>关注</view>
+            <view class='follow-label' wx:else bindtap='cancelFollowAuthor'>已关注</view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='content-body' wx:for="{{list}}" wx:key="{{list}}">
+        <view class='content-item'>
+          <!-- 无图布局 -->
+          <view class='none-image' wx:if="{{item.attachments.length == 0}}" bindtap='openDetail' data-id='{{item.id}}'>
+            <view class='main'>
+              <view class='title'>{{item.title}}</view>
+              <view class='footer'>
+                <view class='time'>1小时前</view>
+                <view class='view'>{{item.view}}浏览</view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 左右布局 -->
+          <view class='left-right' wx:if="{{item.attachments.length == 1}}" bindtap='openDetail' data-id='{{item.id}}'>
+            <view class='left'>
+              <view class='title'>{{item.title}}</view>
+              <view class='footer'>
+                <view class='time'>1小时前</view>
+                <view class='view'>{{item.view}}浏览</view>
+              </view>
+            </view>
+            <view class='right'>
+              <image mode='aspectFill' src='{{item.attachments[0]}}'></image>
+            </view>
+          </view>
+
+          <!-- 上下布局 -->
+          <view class='up-down' wx:if="{{item.attachments.length > 1}}" data-id='{{item.id}}' bindtap='openDetail'>
+            <view class='header'>
+              <view class='title'>{{item.title}}</view>
+            </view>
+            <view class='body'>
+              <image src='{{sub}}'
+                    mode='aspectFill' 
+                    wx:for="{{item.attachments}}" 
+                    wx:key="{{item.attachments}}" wx:for-item="sub"></image>
+            </view>
+            <view class='footer'>
+              <view class='time'>1小时前</view>
+              <view class='view'>{{item.view}}浏览</view>
+            </view>
+          </view>
+
+        </view> 
+      </view>   
+
+
+    </view>
+  </view>
+</view>
