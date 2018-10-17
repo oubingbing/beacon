@@ -8,7 +8,9 @@ Page({
     authorId:'',
     followAuthor:'',
     followCategory:'',
-    showInfo:false
+    showInfo:false,
+    title:'',
+    customer:''
   },
   onLoad: function (options) {
     let _this = this;
@@ -28,7 +30,9 @@ Page({
         followAuthor: resData.data.follow_author,
         followCategory: resData.data.follow_category,
         showInfo:true,
-        authorId:resData.data.poster_id
+        authorId:resData.data.poster_id,
+        title:resData.data.name,
+        customer: resData.data.customer
       })
       if (resData.error_code == 0) {
         if (resData.data.notes.length > 0) {
@@ -115,7 +119,20 @@ Page({
       })
   },
 
-  onShareAppMessage: function () {
-  
-  }
+  /**
+   * 分享
+   */
+  onShareAppMessage: function (res) {
+    return {
+      title: this.data.title,
+      path: '/pages/index/index?type=1&id=' + this.data.id,
+      imageUrl: "",
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
 })

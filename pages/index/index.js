@@ -12,13 +12,13 @@ Page({
     showGeMoreLoadin: false,
     notDataTips:false,
     sharecomeIn:false,
-    detailId:''
+    detailId:'',
+    optionType:''
   },
 
   onLoad: function (e) {
-    console.log("e.id是什么："+e.id);
     if(e.id != undefined){
-      this.setData({ sharecomeIn: true, detailId:e.id})
+      this.setData({ sharecomeIn: true, detailId: e.id, optionType:e.type})
     }
     let eId = e.id;
     let that = this;
@@ -31,9 +31,16 @@ Page({
         }else{
           if (eId != undefined) {
             that.setData({ sharecomeIn: false })
-            wx.navigateTo({
-              url: '/pages/article/article?id=' + eId
-            })
+            if (that.data.optionType == 1){
+              wx.navigateTo({
+                url: '/pages/noteBookList/noteBookList?id=' + eId
+              })
+            }else if(that.data.optionType == 2){
+              wx.navigateTo({
+                url: '/pages/article/article?id=' + eId
+              })
+            }
+          
           }
         }
       }
@@ -101,9 +108,16 @@ Page({
       let detailId = _this.data.detailId;
       if(sharecomeIn == true){
         _this.setData({ sharecomeIn: false })
-        wx.navigateTo({
-          url: '/pages/article/article?id='+detailId
-        })
+
+        if (that.data.optionType == 1) {
+          wx.navigateTo({
+            url: '/pages/noteBookList/noteBookList?id=' + detailId
+          })
+        } else if (_this.data.optionType == 2) {
+          wx.navigateTo({
+            url: '/pages/article/article?id=' + detailId
+          })
+        }
       }
       _this.getList();
     });

@@ -4,8 +4,11 @@
 
       <view class='header-container' wx:if="{{showInfo}}">
         <view class='title'>
-          <view class='title-content'>微信小程序基础教程</view>
+          <view class='title-content'>{{title}}</view>
           <view class='notebook-collect'>
+            <button class='share-button' open-type="share" style='border: none;'>
+              <image class='icon' src='/image/share.png'></image>
+            </button>
             <image src="/image/collect-icon.png" wx:if="{{!followCategory}}" bindtap='followCategory'></image>
             <image src="/image/my-collect.png" wx:else bindtap='cancelFollowCategory'></image>
           </view>
@@ -13,10 +16,10 @@
         <view class='user-container'>
           <view class='user-info'>
             <view class='avatar'>
-              <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
+              <image src="{{customer.avatar != ''?customer.avatar:'/image/avatar.png'}}"></image>
             </view>
             <view class='nickname'>
-              <view class='name'>叶子</view>
+              <view class='name'>{{customer.nickname}}</view>
             </view>
           </view>
           <view class='follow'>

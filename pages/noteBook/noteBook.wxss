@@ -15,12 +15,53 @@ page{
   flex-direction: column;
 }
 
+.switch-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+}
+
+.switch-container .switch{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 15rpx;
+  font-size: 30rpx;
+}
+
+.switch .my{
+  width: 33%;
+  text-align: center;
+  padding-bottom: 15rpx;
+}
+
+.switch .selected{
+  border-bottom-style:solid;
+  border-width:5rpx;
+  border-color: #66CDAA;
+}
+
+.switch .share{
+  width: 33%;
+  text-align: center;
+  padding-bottom: 15rpx;
+}
+
+.switch .collect{
+  width: 33%;
+  text-align: center;
+  padding-bottom: 15rpx;
+}
+
 .container-content .content{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50rpx;
 }
 
 .content .my-note{
@@ -43,7 +84,7 @@ page{
   font-size: 35rpx;
   z-index: 100;
   position: absolute;
-  top: 27rpx;
+  top: 147rpx;
   left: 50rpx;
   background: #F5F5F5;
   padding-right: 15rpx;
@@ -157,4 +198,30 @@ page{
 .file-title .time{
   font-size: 25rpx;
   color: gray;
+}
+
+.share-icon{
+  z-index: 110;
+  position: fixed;
+  bottom: 70rpx;
+  right: 20rpx;
+}
+
+.share-button{
+  background: none !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.share-button::after{
+  border: none;
+}
+
+ .share-button .icon{
+  width: 60rpx;
+  height: 60rpx;
+  background: white;
 }

@@ -1,16 +1,30 @@
 <view class='container'>
   <view class='container-content'>
 
+    <view class='switch-container'>
+      <view class='switch'>
+        <view class='my {{select==1?"selected":""}}' bindtap="selected" data-type='1'>
+          <view class='label'>我的</view>
+        </view>
+        <view class='share {{select==2?"selected":""}}' bindtap="selected" data-type='2'>
+          <view class='label'>共享</view>
+        </view>
+        <view class='collect {{select==3?"selected":""}}' bindtap="selected" data-type='3'>
+          <view class='label'>收藏</view>
+        </view>
+      </view>
+    </view>
 
     <view class='content'>
-      <view class='my-label'>我的笔记簿</view>
-      <scroll-view class='my-note' scroll-y>
+      <view class='my-label' wx:if="{{select==1}}">我的笔记簿</view>
+      <view class='my-label' wx:if="{{select==2}}">共享笔记簿</view>
+      <view class='my-label' wx:if="{{select==3}}">收藏的笔记簿</view>
+      <scroll-view class='my-note' scroll-y bindscrolltolower="getMoreData">
         <view class='note-container'>
-          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' wx:for="{{myList}}" wx:key="{{myList.id}}">
+          <view class='note' bindtap='triggerNoteList' data-id='{{item.id}}' data-name='{{item.name}}' wx:for="{{myList}}" wx:key="{{myList.id}}">
             <image src='/image/dir.png'></image>
             <view class='title'>{{item.name}}</view>
           </view>
-
         </view>
       </scroll-view>
     </view>
@@ -18,8 +32,7 @@
     <view class='alert-container' wx:if="{{showNoteList}}">
       <scroll-view scroll-y class='alert-content'>
           <image class='close-icon' src='/image/close.png' bindtap='triggerNoteList'></image>
-
-          <view class='file-item' wx:for="{{notes}}" wx:key="{{notes}}" data-id='{{item.id}}' bindtap='openDetail'>
+          <view class='file-item' wx:for="{{notes}}" wx:key="{{notes.id}}" data-id='{{item.id}}' bindtap='openDetail'>
             <view class='image-container'>
               <image src='/image/markdown.png'></image>
             </view>
@@ -28,7 +41,11 @@
               <view class='time'>{{item.created_at}}</view>
             </view>
           </view>
-
+          <view class='share-icon'>
+            <button class='share-button' open-type="share" style='border: none;'>
+              <image class='icon' src='/image/shared-icon.png'></image>
+            </button>
+          </view>
       </scroll-view>
     </view>
 

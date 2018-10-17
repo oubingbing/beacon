@@ -167,7 +167,7 @@ Page({
 
     return {
       title: this.data.article.title,
-      path: '/pages/index/index?id=' + id,
+      path: '/pages/index/index?type=2&id=' + id,
       imageUrl: url,
       success: function (res) {
         // 转发成功

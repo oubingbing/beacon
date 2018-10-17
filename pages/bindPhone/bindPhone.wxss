@@ -127,3 +127,46 @@ page{
   font-size: 30rpx;
   color: darkgray;
 }
+
+.bind-user{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bind-user .user-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx; 
+  align-items: center;
+}
+
+.user-info image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+}
+
+.user-info .image{
+  width: 15%;
+}
+
+.user-info .user{
+  width: 70%;
+}
+
+.user-info .bond{
+  width: 15%;
+}
+
+.bond .bind-button{
+  font-size: 30rpx;
+  color: gray;
+}
+
+.user .phone{
+  font-size: 30rpx;
+  color: darkgray;
+}

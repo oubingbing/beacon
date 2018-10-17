@@ -7,11 +7,13 @@ Page({
     code:"",
     tip:"",
     showTime:false,
-    time:90
+    time:90,
+    customer:'',
+    showContent:false,
   },
 
   onLoad: function (options) {
-  
+    this.getBindUserInfo();
   },
 
   /**
@@ -28,7 +30,6 @@ Page({
     }
 
     let _this = this;
-
     app.http("POST", `/send_message`, {phone:phone}, function (res) {
       let resData = res.data;
       if (resData.error_code == 0) {
@@ -46,10 +47,22 @@ Page({
     })
   },
 
+  getBindUserInfo:function(){
+    app.http("GET", `/bind_user_info`, {  }, res=> {
+      this.setData({ showContent:true})
+      let resData = res.data;
+      if (resData.error_code == 0) {
+        this.setData({ customer:resData.data})
+      } else {
+        wx: wx.showToast({
+          title: resData.error_message,
+          icon: "none",
+        })
+      }
+    })
+  },
+
   postBind:function(){
-
-    console.log("post")
-
     let phone = this.data.phone;
     let code = this.data.code;
 
@@ -69,14 +82,14 @@ Page({
       return false;
     }
 
-    app.http("POST", `/bind_user`, { phone: phone,code:code }, function (res) {
+    app.http("POST", `/bind_user`, { phone: phone,code:code }, res=> {
       let resData = res.data;
       if (resData.error_code == 0) {
         wx: wx.showToast({
           title: "绑定成功",
           icon: "none",
         })
-
+        this.setData({ customer: resData.data})
       } else {
         wx: wx.showToast({
           title: resData.error_message,
