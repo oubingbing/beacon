@@ -98,4 +98,14 @@ Page({
       this.getViewList();
     }
   },
+
+  /**
+  * 进入专辑详情页面
+  */
+    openUser: function (e) {
+      let id = e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/userNoteBook/userNoteBook?id=' + id
+      })
+    },
 })

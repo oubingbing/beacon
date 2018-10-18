@@ -22,7 +22,7 @@
           <view class='left'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
-              <view class='nickname'>{{item.poster.nickname}}</view>
+              <view class='nickname' bindtap='openUser' data-id='{{item.poster.id}}'>{{item.poster.nickname}}</view>
               <view class='time'>{{item.created_at}}</view>
               <view class='view'>{{item.statics?item.statics.view:0}}浏览</view>
             </view>

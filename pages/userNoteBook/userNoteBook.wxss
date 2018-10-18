@@ -1,1 +1,132 @@
-/* pages/userNoteBook/userNoteBook.wxss */
+page{
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body .content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.content .header{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  justify-content: center;
+  height: 150rpx;
+
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: gainsboro;
+}
+
+.header .left{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header .right{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.left .avatar{
+  width: 20%;
+}
+
+.avatar image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+}
+
+.left .nickname{
+  width: 80%;
+}
+
+.nickname .name{
+  font-size: 35rpx;
+}
+
+.nickname .follow-user{
+  font-size: 30rpx;
+  color: darkgray;
+}
+
+.right .follow{
+  background: #EE4000;
+  color: white;
+  font-size:25rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  border-radius: 10rpx; 
+}
+
+.right .follow-label{
+  font-size:25rpx;
+  border-style:solid;
+  border-width:1rpx;
+  border-color: darkgray;
+  border-radius: 10rpx;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.content-note{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.content-note .note-item{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.note-item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.note-item .title{
+  font-size: 28rpx;
+  width: 100%;
+  color: gray;
+   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}

@@ -32,7 +32,7 @@ Page({
       let resData = res.data;
       if (resData.error_code == 0){
         _this.setData({myList:resData.data});
-        if(_this.data.myList.length == 0){
+        if(_this.data.myList == ''){
           _this.setData({ showNone:true})
         }
       }
@@ -192,5 +192,5 @@ Page({
         this.followCategoies();
         break;
     }
-  }
+  },
 })

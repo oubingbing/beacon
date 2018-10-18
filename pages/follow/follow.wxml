@@ -2,7 +2,7 @@
   <view class='content'>
     <view class='body-content'>
 
-      <view class='content-item' wx:for="{{list}}" wx:key="{{list.id}}">
+      <view class='content-item' wx:for="{{list}}" wx:key="{{list.id}}" bindtap='openUser' data-id='{{item.customer.id}}'>
         <view class='left'>
           <view class='avatar'>
             <image src='{{item.customer.avatar}}' wx:if="{{item.customer.avatar}}"></image>

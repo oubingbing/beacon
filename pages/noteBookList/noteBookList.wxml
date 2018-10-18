@@ -14,7 +14,7 @@
           </view>
         </view>
         <view class='user-container'>
-          <view class='user-info'>
+          <view class='user-info' bindtap='openUser' data-id='{{customer.id}}'>
             <view class='avatar'>
               <image src="{{customer.avatar != ''?customer.avatar:'/image/avatar.png'}}"></image>
             </view>

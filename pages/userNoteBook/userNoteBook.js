@@ -1,66 +1,84 @@
-// pages/userNoteBook/userNoteBook.js
+var app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    user:'',
+    id: '',
+    followAuthor:false,
+    folowNumber:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    let _this = this;
+    this.setData({ id: options.id })
+    this.getList();
+  },
+
+  getList() {
+    let _this = this;
+    let id = _this.data.id;
+    app.http("GET", `/user/${id}/category`, {}, function (res) {
+      _this.setData({ showGeMoreLoadin: false })
+      let resData = res.data;
+      console.log(resData)
+      _this.setData({
+          user: resData.data, 
+          followAuthor: resData.data.follow_author,
+          folowNumber: resData.data.follow_number
+        })
+    })
+  },
+
+  openCategory:function(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/noteBookList/noteBookList?id=${id}`
+    })
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+ * 关注作者或者文章
+ */
+  followAuthor: function (e) {
+    let objType = 1;
+    let objId = this.data.user.id;
+
+    app.http('POST', `/follow`,
+      {
+        obj_id: objId,
+        type: objType
+      }, res => {
+        this.setData({ followAuthor: true, folowNumber: this.data.folowNumber+1 })
+      })
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 取消关注作者
    */
-  onShow: function () {
-  
+  cancelFollowAuthor: function (e) {
+    let objType = 1;
+    let objId = this.data.user.id;
+
+    app.http('POST', `/cancel_follow`,
+      {
+        obj_id: objId,
+        type: objType
+      }, res => {
+        console.log(res.data);
+        let resData = res.data;
+        if (resData.error_code == 0) {
+          this.setData({ followAuthor: false, folowNumber: this.data.folowNumber-1 })
+        }
+      })
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+* 进入专辑详情页面
+*/
+  openUser: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/userNoteBook/userNoteBook?id=' + id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

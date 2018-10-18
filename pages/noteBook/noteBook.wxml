@@ -25,7 +25,6 @@
         </view>
         <view class='note-container'>
           <view class='note' 
-
                 bindtap='triggerNoteList' 
                 data-id='{{item.id}}' 
                 data-name='{{item.name}}' 

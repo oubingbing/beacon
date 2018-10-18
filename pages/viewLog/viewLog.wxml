@@ -10,7 +10,7 @@
           <view class='main'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
-              <view class='nickname'>叶子</view>
+              <view class='nickname' bindtap='openUser' data-id='{{item.poster.id}}'>{{item.poster.nickname}}</view>
               <view class='time'>{{item.created_at}}</view>
               <view class='view'>{{item.view_number}}浏览</view>
             </view>
@@ -22,7 +22,7 @@
           <view class='left'>
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
-              <view class='nickname'>叶子</view>
+              <view class='nickname' bindtap='openUser' data-id='{{item.poster.id}}'>{{item.poster.nickname}}</view>
               <view class='time'>{{item.created_at}}</view>
               <view class='view'>{{item.view_number}}浏览</view>
             </view>
@@ -44,7 +44,7 @@
                    wx:key="{{item.attachments}}" wx:for-item="sub"></image>
           </view>
           <view class='footer'>
-            <view class='nickname'>{{item.poster.nickname}}</view>
+            <view class='nickname' bindtap='openUser' data-id='{{item.poster.id}}'>{{item.poster.nickname}}</view>
             <view class='time'>{{item.created_at}}</view>
             <view class='view'>{{item.view_number}}浏览</view>
           </view>

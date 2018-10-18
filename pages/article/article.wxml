@@ -3,7 +3,7 @@
 <view class='container'>
   <view class='title'>{{article.title}}</view>
   <view class='header' wx:if="{{article}}">
-    <view class='user-info'>
+    <view class='user-info' bindtap='openUser' data-id='{{article.poster.id}}'>
       <view class='avatar'>
         <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKiauVH65XNEZic7VD1uUKicE9v3V4zX04sptkOrLibqChmcouZrW8NHNYARfHYQYVwLicRQmfU0FoLIwQ/132'></image>
       </view>

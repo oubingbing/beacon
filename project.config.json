@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -68,10 +68,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "绑定",
-					"pathName": "components/showToast/showToast",
-					"query": ""
+					"id": 6,
+					"name": "用户笔记簿",
+					"pathName": "pages/userNoteBook/userNoteBook",
+					"query": "id=1"
 				},
 				{
 					"id": -1,

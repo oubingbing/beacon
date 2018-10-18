@@ -1,2 +1,31 @@
-<!--pages/userNoteBook/userNoteBook.wxml-->
-<text>pages/userNoteBook/userNoteBook.wxml</text>
+<view class="container">
+  <view class='body'>
+    <view class='content'>
+
+    <view class='header' wx:if="{{user}}">
+      <view class='left' bindtap='openUser' data-id='{{user.id}}'>
+        <view class='avatar'><image src='{{user.avatar}}'></image></view>
+        <view class='nickname'>
+          <view class='name'>{{user.nickname}}</view>
+          <view class='follow-user'>{{folowNumber}}关注</view>
+        </view>
+      </view>
+      <view class='right'>
+        <view class='follow' wx:if="{{!followAuthor}}" bindtap='followAuthor'>关注</view>
+        <view class='follow-label' wx:else bindtap='cancelFollowAuthor'>已关注</view>
+      </view>
+    </view>
+
+    <view class='content-note'>
+
+      <view class='note-item' wx:for="{{user.categories}}" wx:key="{{item.id}}" bindtap='openCategory' data-id='{{item.id}}'>
+        <image src='/image/dir.png'></image>
+        <view class='title'>{{item.name}}</view>
+      </view>
+
+    </view>
+
+
+    </view>
+  </view>
+</view>
