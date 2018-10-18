@@ -31,7 +31,10 @@ Page({
       if (resData.error_code == 0) {
         if (resData.data.page_data.length > 0) {
           resData.data.page_data.map(item => {
-            list.push(item.note)
+            if(item.note){
+              item.note.view_number = item.view_number;
+              list.push(item.note)
+            }
           })
           _this.setData({
             list: list,
@@ -54,7 +57,10 @@ Page({
         if (resData.data.page_data.length > 0) {
           console.log(resData.data.page_data)
           resData.data.page_data.map(item => {
-            list.push(item.note)
+            if(item.note){
+              item.note.view_number = item.view_number;
+              list.push(item.note)
+            }
           })
           _this.setData({
             list: list,

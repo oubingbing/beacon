@@ -9,7 +9,7 @@
       </view>
       <view class='nickname'>
         <view class='name'>{{article.poster.nickname}}</view>
-        <view class='time'>1小时前</view>
+        <view class='time'>{{article.created_at}}</view>
       </view>
     </view>
     <view class='follow'>

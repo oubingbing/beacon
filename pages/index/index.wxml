@@ -23,7 +23,7 @@
             <view class='title'>{{item.title}}</view>
             <view class='footer'>
               <view class='nickname'>{{item.poster.nickname}}</view>
-              <view class='time'>1小时前</view>
+              <view class='time'>{{item.created_at}}</view>
               <view class='view'>{{item.statics?item.statics.view:0}}浏览</view>
             </view>
           </view>

@@ -10,7 +10,7 @@
           </view>
           <view class='nickname-info'>
             <view class='nickname'>{{item.customer.nickname}}</view>
-            <view class='follow-count'>{{item.follow_number}}关注</view>
+            <view class='follow-count'>{{item.view_number}}关注</view>
           </view>
         </view>
         <view class='right'>
