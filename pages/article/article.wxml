@@ -35,10 +35,17 @@
 </view>
 <template bind:tap is="entry" data="{{...content}}"/>
 <view class='footer'>
+
   <view class='note-category' wx:if="{{article}}">
     <view class='label' bindtap='categoryDetail'>
       <view><image src='/image/dir.png'></image></view>
       <view>{{article.category.name}}</view>
     </view>
   </view>
+
+  <view class='donation-container' wx:if="{{article.poster.donation_qr_code}}">
+    <view class='label'>赞赏一下作者吧</view>
+    <image' src='{{article.poster.donation_qr_code}}' mode='widthFix' bindtap='previewQrCode'></image>
+  </view>
+
 </view>

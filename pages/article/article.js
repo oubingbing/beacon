@@ -4,7 +4,8 @@ Page({
   data: {
     content: {},
     id:'',
-    article:''
+    article:'',
+    showQrCode:false
   },
 
   /**
@@ -39,10 +40,13 @@ Page({
           }
         };
 
+        let qrCode = res.data.data.poster.donation_qr_code;
+
         //设置数据
         that.setData({
           content: data,
-          article: res.data.data
+          article: res.data.data,
+          showQrCode: qrCode?true:false
         });
         wx.hideLoading();
       })
@@ -182,5 +186,14 @@ Page({
     wx.navigateTo({
       url: '/pages/noteBookList/noteBookList?id=' + this.data.article.category_id
     })
-  }
+  },
+  /**
+* 预览图片
+*/
+  previewQrCode: function () {
+    wx.previewImage({
+      current: this.data.article.poster.donation_qr_code,
+      urls: [this.data.article.poster.donation_qr_code]
+    })
+  },
 })
