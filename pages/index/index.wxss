@@ -130,6 +130,29 @@ page{
   margin-right: 20rpx;
 }
 
+/** 无图布局 **/
+.content-item .none-image{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+}
+
+.none-image .main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.none-image .footer{
+  margin-top: 15rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  font-size: 25rpx;
+}
+
 
 
 /** 授权按钮 **/
