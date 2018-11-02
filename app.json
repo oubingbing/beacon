@@ -26,12 +26,6 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/dengta.png",
-        "selectedIconPath": "image/select-dengta.png",
-        "text": "灯塔"
-      },
-      {
-        "pagePath": "pages/note/note",
         "iconPath": "image/my-note.png",
         "selectedIconPath": "image/my-note-select.png",
         "text": "笔记"
