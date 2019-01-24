@@ -17,6 +17,9 @@ Page({
   },
 
   onLoad: function (e) {
+    wx.showLoading({
+      title: '加载中',
+    });
     if(e.id != undefined){
       this.setData({ sharecomeIn: true, detailId: e.id, optionType:e.type})
     }
@@ -56,13 +59,13 @@ Page({
   onShow: function (option) {
     
   },
-
   /**
    * 获取文章列表
    */
   getList(){
     let _this = this;
     app.http("GET", "/notes"+`?page_size=${ this.data.pageSize }&page_number=${ this.data.pageNumber }&note_type=1`, {}, function (res) {
+      wx.hideLoading();
       _this.setData({ showGeMoreLoadin: false })
       let resData = res.data;
       let list = _this.data.list;

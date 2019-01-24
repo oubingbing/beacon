@@ -93,6 +93,7 @@ App({
       method: _method,
       data: _data,
       success: function (res) {
+        wx.hideLoading()
         if (res.data.error_code == '4001' || res.data.error_code == '4000' || res.data.error_code == '5000') {
           console.log('token过期了');
           _this.login(_method, _url, _data, callback);
